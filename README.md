@@ -1,10 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Meng Han's personal website
 
-## Getting Started
+## Prerequisites
 
-First, run the development server:
+Before starting, ensure you have the following installed on your system:
+
+1. **Node.js** (version 14.x or higher) - [Download Node.js](https://nodejs.org/)
+2. **Yarn** - [Install Yarn](https://yarnpkg.com/getting-started/install)
+
+## Quick Start
 
 ```bash
+# clone the repository
+$ git clone https://github.com/yeo-menghan/yeo-menghan.github.io.git
+
+# navigate to the repository
+$ cd yeo-menghan.github.io
+
+# install dependencies
+$ yarn install
+
+# start development server
 npm run dev
 # or
 yarn dev
@@ -16,10 +31,6 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
@@ -29,8 +40,6 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Technologies used
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![](https://skillicons.dev/icons?i=nextjs,tailwind,ts,github,githubactions,yarn)
