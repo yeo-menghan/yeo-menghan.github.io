@@ -4,72 +4,75 @@ import ExperienceCard from "../../experience-card";
 const ExperienceSection = () => {
   return (
     <>
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-2xl font-bold m-3  my-8 flex">
-        <p id="experience" className="mx-auto justify-center p-3 my-5 underline">
+      <div className="z-10 w-full max-w-5xl mx-auto items-center justify-between font-mono text-2xl font-bold m-3 my-8 flex">
+        <p id="experience"
+        className="mx-auto justify-center p-3 my-5 underline">
           EXPERIENCE
         </p>
       </div>
-      <div className="items-center">
-        <ol className="relative border-s border-gray-200 dark:border-gray-700">
-          <ExperienceCard
-            icon="http://www.w3.org/2000/svg"
-            company="Rockship"
-            role="AI Engineer Intern"
-            period="2024 Jan - 2024 June"
-            image="/rockship.png"
-            url="https://rockship.co/"
-            location="Ho Chi Minh City, Vietnam"
-            description="Worked on AI models for natural language processing."
-          />
-          <ExperienceCard
-            icon="http://www.w3.org/2000/svg"
-            company="DSTA"
-            role="Robotics Engineer Intern"
-            period="2023 May - 2023 Jul"
-            image="/dsta.jpg"
-            url="https://www.dsta.gov.sg/"
-            location="Singapore"
-            description="Developed robotics solutions for defence applications."
-          />
-          <ExperienceCard
-            icon="http://www.w3.org/2000/svg"
-            company="Nat. University of Singapore"
-            role="Undergraduate Research Opportunity Programme"
-            period="2023 Aug - 2023 Dec"
-            image="/nus-logo.jpg"
-            url="https://www.comp.nus.edu.sg/programmes/ug/project/urop/"
-            description="Conducted research on computer vision algorithms."
-          />
-          <ExperienceCard
-            icon="http://www.w3.org/2000/svg"
-            company="TaCo - Course Taster"
-            role="Course Instructor"
-            period="2023 Apr - 2023 May"
-            image="/taco.jpeg"
-            url="https://tastercourse.com/"
-            description="Taught programming courses to beginners."
-          />
-          <ExperienceCard
-            icon="http://www.w3.org/2000/svg"
-            company="Oolong"
-            role="Software Engineer Intern"
-            period="2023 Jan - 2023 May"
-            image="/oolong.png"
-            url="https://oolong.app/"
-            location="Remote"
-            description="Built features for the mobile app using Laravel"
-          />
-          <ExperienceCard
-            icon="http://www.w3.org/2000/svg"
-            company="NUS Students' Computing Club"
-            role="Project Director"
-            period="2022 Dec - 2023 Jun"
-            image="/nus-comp-club.jpeg"
-            url="https://lifehack-23.devpost.com/"
-            location="Singapore"
-            description="Organised the Lifehack 2023 hackathon."
-          />
-        </ol>
+      <div className="w-full flex justify-center">
+        <div className="w-full max-w-5xl">
+          <ol className="relative border-s border-gray-200">
+            <ExperienceCard
+              company="Rockship"
+              role="AI / Computer Vision Engineer Intern"
+              period="January 2024 - June 2024"
+              image="/rockship.png"
+              companyUrl="https://rockship.co/"
+              blogUrl="https://yourblog.com/rockship-experience"
+              location="Ho Chi Minh City, Vietnam"
+              description="Worked on AI models for natural language processing."
+            />
+            <ExperienceCard
+              company="DSTA"
+              role="Robotics Engineer Intern"
+              period="May 2023 - July 2023"
+              image="/dsta.jpg"
+              companyUrl="https://www.dsta.gov.sg/"
+              blogUrl="https://yourblog.com/dsta-experience"
+              location="Singapore"
+              description="Developed robotics solutions for defence applications."
+            />
+            <ExperienceCard
+              company="Nat. University of Singapore"
+              role="Undergraduate Research Opportunity Programme"
+              period="August 2023 - December 2023"
+              image="/nus-logo.jpg"
+              companyUrl="https://www.comp.nus.edu.sg/programmes/ug/project/urop/"
+              blogUrl="https://yourblog.com/nus-urop-experience"
+              description="Conducted research on computer vision algorithms for stairs detection."
+            />
+            <ExperienceCard
+              company="TaCo - Course Taster"
+              role="Course Instructor"
+              period="April 2023 - May 2023"
+              image="/taco.jpeg"
+              companyUrl="https://tastercourse.com/"
+              blogUrl="https://yourblog.com/taco-experience"
+              description="Taught computer engineering courses to beginners."
+            />
+            <ExperienceCard
+              company="Oolong"
+              role="Software Engineer Intern"
+              period="January 2023 - May 2023"
+              image="/oolong.png"
+              companyUrl="https://oolong.app/"
+              blogUrl="https://yourblog.com/oolong-experience"
+              location="Remote"
+              description="Built features for the mobile app using Laravel."
+            />
+            <ExperienceCard
+              company="NUS Students' Computing Club"
+              role="Project Director"
+              period="December 2022 - June 2023"
+              image="/nus-comp-club.jpeg"
+              companyUrl="https://lifehack-23.devpost.com/"
+              blogUrl="https://yourblog.com/nus-comp-club-experience"
+              location="Singapore"
+              description="Organised the Lifehack 2023 hackathon."
+            />
+          </ol>
+        </div>
       </div>
     </>
   );
