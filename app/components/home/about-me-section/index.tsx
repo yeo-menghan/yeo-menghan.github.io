@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Socials from "../../socials";
 
 const AboutMeSection = () => {
   return (
@@ -22,7 +23,9 @@ const AboutMeSection = () => {
           />
         </div>
         <div className="p-3 lg:w-[80%] lg:mx-auto">
-          <p className="text-xl font-semibold">Hi, I&apos;m Meng Han</p>
+          <p className="text-4xl font-semibold">Hi, I&apos;m {" "}
+            <span className="hover:bg-lime-500 hover:text-zinc-800 transition duration-300">Meng Han</span>
+            </p>
           <p className="mt-3">
             I study <span className="font-semibold">Computer Engineering</span>{" "}
             at National University of Singapore as an{" "}
@@ -33,7 +36,16 @@ const AboutMeSection = () => {
             >
               Engineering Scholar
             </a>
-            . Currently, I am working as a{" "}
+            . Currently, I am on student exchange at{" "}
+            <a
+              className="font-semibold underline"
+              href="https://www.cuhk.edu.hk/english/index.html"
+              target="_blank"
+            >
+              Chinese University of Hong Kong
+            </a>
+            .
+            {/* . Currently, I am working as a{" "}
             <span className="font-semibold">AI Engineer Intern</span> at{" "}
             <a
               className="font-semibold underline"
@@ -50,17 +62,18 @@ const AboutMeSection = () => {
             >
               NOC Vietnam AY2023-24 Semester 2
             </a>
-            .
+            . */}
           </p>
           <p className="mt-3">
             You can talk to me about{" "}
-            <span className="font-semibold">
+            <span className="font-bold">
               LLMs, Deep Learning, AI agents, Robotics, IoT, Software Engineering
             </span>{" "}
-            and <span className="font-semibold">Startups</span>.
+            and <span className="font-bold">Startups</span>.
           </p>
         </div>
       </div>
+      <Socials />
     </>
   );
 };

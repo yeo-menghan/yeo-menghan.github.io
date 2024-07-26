@@ -12,9 +12,11 @@
     "@heroicons/react": "^2.1.5",
     "flowbite": "^2.4.1",
     "flowbite-react": "^0.10.1",
+    "lucide-react": "^0.416.0",
     "next": "14.2.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sonner": "^1.5.0"
   },
   "devDependencies": {
     "@types/node": "^20",
