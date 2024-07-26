@@ -14,7 +14,7 @@ const ExperienceSection = () => {
         <div className="w-full max-w-5xl">
           <ol className="relative border-s border-gray-200">
             <ExperienceCard
-              company="Rockship"
+              company="Rockship, NOC Vietnam"
               role="AI / Computer Vision Engineer Intern"
               period="January 2024 - June 2024"
               image="/rockship.png"
