@@ -5,13 +5,7 @@ import Socials from "../../socials";
 const AboutMeSection = () => {
   return (
     <>
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-2xl font-bold m-3 mb-8 flex">
-        <p id="about-me" className="mx-auto justify-center p-3 underline">
-          ABOUT ME
-        </p>
-      </div>
-
-      <div className="flex flex-col lg:flex-row md:w-[70%] mt-3 items-center">
+      <div id="about-me" className="flex flex-col lg:flex-row md:w-[70%] mt-3 items-center pt-10" style={{ scrollMarginTop: "100px" }}>
         <div className="lg:w-[50%]">
           <Image
             className="mx-auto rounded-md"
@@ -42,9 +36,9 @@ const AboutMeSection = () => {
               href="https://www.cuhk.edu.hk/english/index.html"
               target="_blank"
             >
-              Chinese University of Hong Kong
+              The Chinese University of Hong Kong
             </a>
-            .
+            {" "}🇭🇰.
             {/* . Currently, I am working as a{" "}
             <span className="font-semibold">AI Engineer Intern</span> at{" "}
             <a

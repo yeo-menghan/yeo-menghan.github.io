@@ -21,7 +21,7 @@ const ExperienceSection = () => {
               companyUrl="https://rockship.co/"
               blogUrl="https://yourblog.com/rockship-experience"
               location="Ho Chi Minh City, Vietnam"
-              description="Worked on AI models for natural language processing."
+              description="Worked on AI and object detection models for various clients"
             />
             <ExperienceCard
               company="DSTA"

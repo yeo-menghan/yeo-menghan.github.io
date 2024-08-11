@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Header from "./components/home/header";
+import Footer from "./components/home/footer";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -38,7 +40,10 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/chess.svg" />
       </head>
       <body className={`${inter.className} bg-gray-600 text-white`}>
-        {children}      </body>
+        <Header></Header>
+        {children}
+        <Footer></Footer>
+      </body>
     </html>
   );
 }
