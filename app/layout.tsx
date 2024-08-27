@@ -39,7 +39,7 @@ export default function RootLayout({
       <head>
         <link rel="shortcut icon" href="/chess.svg" />
       </head>
-      <body className={`${inter.className} bg-gray-600 text-white`}>
+      <body className={`${inter.className} bg-zinc-800 text-white`}>
         <Header></Header>
         {children}
         <Footer></Footer>

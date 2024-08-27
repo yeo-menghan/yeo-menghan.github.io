@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="p-2 pb-4 text-center">
         Inspired by{" "}
         <a className="underline" href="https://github.com/SuveenE/suveene.github.io">
-        Suveen's template.
+        Suveens&apos; template.
         </a>{" "}
       </div>
     </div>
