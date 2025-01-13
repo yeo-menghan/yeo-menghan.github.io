@@ -85,7 +85,7 @@ const Socials = () => {
           }
         }}
       >
-        yeo_menghan@u.nus.edu <CopyIcon size={14} />
+        yeomenghan1989@gmail.com <CopyIcon size={14} />
       </p>
     </>
   );

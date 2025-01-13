@@ -21,24 +21,16 @@ const AboutMeSection = () => {
             <span className="hover:bg-lime-500 hover:text-zinc-800 transition duration-300">Meng Han</span>
             </p>
           <p className="mt-3">
-            I study <span className="font-semibold">Computer Engineering</span>{" "}
-            at National University of Singapore as an{" "}
+            I am a <span className="font-semibold">Final Year Computer Engineering Undergraduate</span>{" "}
+            at the National University of Singapore (NUS) under the{" "}
             <a
               className="font-semibold underline"
               href="https://cde.nus.edu.sg/escholars/"
               target="_blank"
             >
-              Engineering Scholar
+              Engineering Scholars Program
             </a>
-            . Currently, I am on student exchange at{" "}
-            <a
-              className="font-semibold underline"
-              href="https://www.cuhk.edu.hk/english/index.html"
-              target="_blank"
-            >
-              The Chinese University of Hong Kong
-            </a>
-            {" "}🇭🇰.
+            !
             {/* . Currently, I am working as a{" "}
             <span className="font-semibold">AI Engineer Intern</span> at{" "}
             <a
@@ -61,7 +53,7 @@ const AboutMeSection = () => {
           <p className="mt-3">
             You can talk to me about{" "}
             <span className="font-bold">
-              LLMs, Deep Learning, AI agents, Robotics, IoT, Software Engineering
+              Computer Vision, Model-Fine-Tuning, GenAI, AI agents, Data Science, Software Engineering
             </span>{" "}
             and <span className="font-bold">Startups</span>.
           </p>

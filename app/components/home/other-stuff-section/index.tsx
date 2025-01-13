@@ -9,7 +9,7 @@ const OtherStuffSection = () => {
           OTHER STUFF
         </p>
       </div>
-      <div className="grid lg:w-[70%] grid-cols-1 lg:grid-cols-3 mx-auto gap-3 mb-10 items-center">
+      <div className="grid lg:w-[70%] grid-cols-1 lg:grid-cols-3 mx-auto gap-2 mb-10 items-center">
         <div className="flex flex-col my-auto justify-center gap-3">
           <div>
             <div className="flex flex-col p-3 w-fit border-2 border-white rounded-md">
@@ -52,7 +52,7 @@ const OtherStuffSection = () => {
             </div>
           </div>
         </div>
-        <div className="md:ml-auto flex flex-col my-auto justify-center gap-3">
+        <div className="flex flex-col my-auto justify-center gap-3">
           <div className="flex flex-col p-3 w-72 border-2 border-white rounded-md mx-auto">
             <div className="mx-auto items-center">
               <div className="font-bold my-2 mx-auto text-center">
