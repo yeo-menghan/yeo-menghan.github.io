@@ -10,10 +10,10 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 gap-12 mb-12">
           <div>
             <h3 className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Let's Connect
+              Let&apos;s Connect
             </h3>
             <p className="text-slate-300 mb-6">
-              I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+              I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
             </p>
             <div className="space-y-3">
               <a 

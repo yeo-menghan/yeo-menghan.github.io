@@ -110,7 +110,7 @@ export default function Chatbot() {
                   <Bot className="text-blue-600" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold">Meng Han's AI Assistant</h4>
+                  <h4 className="font-bold">Meng Han&apos;s AI Assistant</h4>
                   <p className="text-xs text-blue-100">Powered by Groq</p>
                 </div>
               </div>

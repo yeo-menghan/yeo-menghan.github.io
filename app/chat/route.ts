@@ -75,16 +75,23 @@ export async function POST(req: NextRequest) {
         );
     }
 
+    type MessageRole = 'system' | 'user' | 'assistant';
+    type Message = { role: MessageRole; content: string };
+
     // Prepare messages for Groq API
-    const groqMessages = [
+    const groqMessages: Message[] = [
         {
             role: 'system',
             content: RESUME_CONTEXT
         },
-        ...messages.map((msg: { role: string; content: string }) => ({
-            role: msg.role,
-            content: msg.content
-        }))
+        ...messages
+            .filter((msg: any) =>
+                ['system', 'user', 'assistant'].includes(msg.role)
+            )
+            .map((msg: any) => ({
+                role: msg.role as MessageRole,
+                content: msg.content
+            }))
     ];
 
     const completion = await groq.chat.completions.create({
