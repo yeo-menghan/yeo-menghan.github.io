@@ -1,49 +1,60 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import Header from "./components/home/header";
-import Footer from "./components/home/footer";
-import "./globals.css";
+// app/layout.tsx
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Meng Han",
-  description: "Meng Han's personal website.",
-  icons: {
-    icon: "/chess.svg",
-  },
+  title: 'Yeo Meng Han - AI/ML Engineer',
+  description: 'Portfolio of Yeo Meng Han, AI/ML Engineer specializing in RAG, LLMs, and Computer Vision',
+  keywords: [
+    'Yeo Meng Han',
+    'AI Engineer',
+    'ML Engineer',
+    'Machine Learning',
+    'Artificial Intelligence',
+    'RAG',
+    'LLM',
+    'Computer Vision',
+    'Portfolio',
+    'NUS Engineering Scholar',
+    'NUS',
+    'National University of Singapore',
+    'Python'
+  ],
+  authors: [{ name: 'Yeo Meng Han', url: 'https://yeo-menghan.github.io/' }],
+  robots: 'index, follow',
   openGraph: {
-    title: "Meng Han",
-    description: "Meng Han's personal website.",
-    url: "https://yeo-menghan.github.io/",
-    siteName: "Yeo Meng Han",
+    title: 'Yeo Meng Han - AI/ML Engineer',
+    description: 'Portfolio of Yeo Meng Han, AI/ML Engineer specializing in RAG, LLMs, and Computer Vision',
+    url: 'https://yeo-menghan.github.io/',
+    siteName: 'Yeo Meng Han Portfolio',
     images: [
       {
-        url: "https://yeo-menghan.github.io/yeo-menghan.jpg",
-        width: 800,
-        height: 600,
+        url: 'https://yeo-menghan.github.io/public/chess.svg', // Replace with your Open Graph image URL
+        width: 1200,
+        height: 630,
+        alt: 'Yeo Meng Han - AI/ML Engineer',
       },
     ],
-    locale: "en_US",
-    type: "website",
-  },
+    locale: 'en_US',
+    type: 'website',
+  },  
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" data-theme="light">
+    <html lang="en" dir="ltr" className="scroll-smooth">
       <head>
-        <link rel="shortcut icon" href="/chess.svg" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className={`${inter.className} bg-zinc-800 text-white`}>
-        <Header></Header>
-        {children}
-        <Footer></Footer>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

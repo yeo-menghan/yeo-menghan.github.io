@@ -1,15 +1,19 @@
-import AboutMeSection from "./components/home/about-me-section";
-import ExperienceSection from "./components/home/experience-section";
-import ProjectsSection from "./components/home/project-section";
-import OtherStuffSection from "./components/home/other-stuff-section";
+// app/page.tsx
+
+import Hero from './components/Hero';
+import Experience from './components/Experience';
+import Projects from './components/Projects';
+import Footer from './components/Footer';
+import Chatbot from './components/Chatbot'; 
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-6 pb-3 lg:pb-6 lg:px-24 lg:pt-16 bg-zinc-800 font-mono">
-      <AboutMeSection />
-      <ExperienceSection />
-      <ProjectsSection />
-      <OtherStuffSection />
+    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+      <Hero />
+      <Experience />
+      <Projects />
+      <Footer />
+      <Chatbot />
     </main>
   );
 }
