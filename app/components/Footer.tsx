@@ -23,13 +23,6 @@ export default function Footer() {
                 <Mail size={20} />
                 <span>yeo_menghan@u.nus.edu</span>
               </a>
-              <a 
-                href="tel:+6598150541"
-                className="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition-colors"
-              >
-                <Phone size={20} />
-                <span>+65 9815 0541</span>
-              </a>
             </div>
           </div>
 
