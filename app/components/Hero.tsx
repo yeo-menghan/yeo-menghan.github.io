@@ -132,7 +132,7 @@ export default function Hero() {
           {/* Personal Intro Section */}
           <div className="mb-8 max-w-3xl">
             <p className="text-lg md:text-xl text-slate-300 leading-relaxed">
-              Outside of tech, I'm a huge <span className="text-slate-200 font-medium">gamer and football</span> fan, 
+              Outside of tech, I&apos;m a huge <span className="text-slate-200 font-medium">gamer and football</span> fan, 
               love exploring music and cycling routes, and enjoy learning about civilisations and history. 
             </p>
           </div>
