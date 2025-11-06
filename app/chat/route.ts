@@ -59,7 +59,6 @@ TECHNICAL SKILLS:
 
 CONTACT:
 - Email: yeo_menghan@u.nus.edu
-- Phone: +65-98150541
 - GitHub: https://github.com/yeo-menghan
 
 Answer questions about Meng Han's experience, projects, and skills in a friendly, professional manner. Be concise but informative. If asked about topics not in his resume, politely redirect to his areas of expertise.`;

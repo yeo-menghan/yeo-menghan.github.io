@@ -28,6 +28,15 @@ export default function Hero() {
             <button onClick={() => scrollToSection('experience')} className="hover:text-blue-400 transition-colors">Experience</button>
             <button onClick={() => scrollToSection('projects')} className="hover:text-blue-400 transition-colors">Projects</button>
             <button onClick={() => scrollToSection('contact')} className="hover:text-blue-400 transition-colors">Contact</button>
+            <button onClick={() => scrollToSection('contact')} className="hover:text-blue-400 transition-colors">
+              <a 
+                href="https://medium.com/@yeomenghan1989" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+              >
+                Blog<span className="text-sm ml-1">↗</span>
+              </a>
+            </button>
           </div>
 
           {/* Mobile Hamburger Icon */}

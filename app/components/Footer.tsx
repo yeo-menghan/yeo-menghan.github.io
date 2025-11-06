@@ -56,6 +56,12 @@ export default function Footer() {
                 >
                   Contact
                 </a>
+                <a 
+                  href="https://medium.com/@yeomenghan1989" 
+                  className="block text-slate-300 hover:text-blue-400 transition-colors"
+                >
+                  Blog<span className="text-sm ml-1">↗</span>
+                </a>
               </div>
             </div>
           </div>
