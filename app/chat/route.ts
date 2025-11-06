@@ -6,6 +6,8 @@ const groq = new Groq({
     apiKey: process.env.GROQ_API_KEY,
 });
 
+console.log('GROQ_API_KEY is', process.env.GROQ_API_KEY ? 'set' : 'NOT set');
+
 // Resume context for the chatbot
 const RESUME_CONTEXT = `You are an AI assistant representing Yeo Meng Han, an AI/ML Engineer. Here is his information:
 
