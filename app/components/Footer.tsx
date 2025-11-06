@@ -13,7 +13,7 @@ export default function Footer() {
               Let&apos;s Connect
             </h3>
             <p className="text-slate-300 mb-6">
-              I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+              I&apos;m always open to discussing new and interesting projects or opportunities!
             </p>
             <div className="space-y-3">
               <a 

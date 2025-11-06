@@ -9,7 +9,7 @@ interface Project {
   description: string;
   tech: string[];
   link: string;
-  category: string;
+  categories: string[];
 }
 
 const projects: Project[] = [
@@ -18,43 +18,22 @@ const projects: Project[] = [
     description: 'Fine-tuned Whisper and Wav2Vec2 models on Singapore National Speech Corpus using LoRA and Optuna hyperparameter tuning, reducing Word Error Rate from 122.81% to 21.05%',
     tech: ['PyTorch', 'LoRA', 'Optuna', 'Whisper', 'Wav2Vec2'],
     link: 'https://github.com/yeo-menghan/SG_Eng_ASR',
-    category: 'NLP'
+    categories: ['NLP']
   },
   {
     title: 'AISG National AI Challenge 2024',
     description: 'Top 3 winner - Engineered Chain-of-Thought prompts for GPT-3.5-turbo within LangChain to deliver fraud warnings for email analysis. Integrated Gmail API into Chrome extension',
     tech: ['LangChain', 'GPT-3.5-turbo', 'Chrome Extension', 'Gmail API'],
     link: 'https://github.com/aisg-2024/langchain_backend',
-    category: 'LLM'
+    categories: ['LLM', 'Web Dev']
   },
   {
-    title: 'Taxi Demand Forecasting System',
-    description: 'Improved forecasting accuracy from 48% to 62% using XGBoost with time series decomposition and feature engineering. Deployed via CI/CD pipeline to AWS Lambda',
-    tech: ['XGBoost', 'AWS Lambda', 'CloudFormation', 'ECR', 'Time Series'],
-    link: '#',
-    category: 'ML'
+    title: 'Grain: Driver-Order Allocation System',
+    description: 'Build a working prototype of an AI-powered delivery allocation system that intelligently assigns catering orders to delivery specialists based on constraints, priorities, and logistics.',
+    tech: ['Streamlit', 'Folium', 'Python', 'OpenAI API'],
+    link: 'https://github.com/yeo-menghan/grain-project',
+    categories: ['LLM', 'Visualisation']
   },
-  {
-    title: 'Real-time Human Tracking System',
-    description: 'Implemented DEEPSort with YOLOv8 for lightweight real-time human detection and tracking using overhead fisheye footage, achieving 84% mAP accuracy at 15FPS',
-    tech: ['YOLOv8', 'DEEPSort', 'OpenCV', 'Computer Vision'],
-    link: '#',
-    category: 'CV'
-  },
-  {
-    title: 'RAG Pipeline for n8n Workflows',
-    description: 'Built production-ready RAG pipeline using LangChain to ingest 50+ publicly available n8n workflows. Developed scalable LlamaIndex RAG APIs with built-in OCR safeguards',
-    tech: ['LangChain', 'LlamaIndex', 'RAG', 'LangSmith', 'OCR'],
-    link: '#',
-    category: 'LLM'
-  },
-  {
-    title: 'ARKit Object Detection iOS App',
-    description: 'Improved YOLOv8 object detection mAP by 20 percentage points and integrated model within ARKit iOS Swift app for precise alignment and distance measurement',
-    tech: ['YOLOv8', 'ARKit', 'Swift', 'CoreML', 'iOS'],
-    link: '#',
-    category: 'CV'
-  }
 ];
 
 export default function Projects() {
@@ -82,11 +61,16 @@ export default function Projects() {
                 viewport={{ once: true }}
                 className="bg-slate-800/50 rounded-xl p-6 border border-slate-700 hover:border-purple-500 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
               >
-                <div className="flex justify-between items-start mb-3">
+                <div className="flex justify-between items-start mb-3 gap-3">
                   <div>
-                    <span className="text-xs font-semibold text-purple-400 bg-purple-400/10 px-2 py-1 rounded">
-                      {project.category}
-                    </span>
+                    {project.categories.map((category, i) => (
+                      <span
+                        key={i}
+                        className="text-xs font-semibold text-purple-400 bg-purple-400/10 px-2 py-1 rounded mr-1 mb-1"
+                      >
+                        {category}
+                      </span>
+                    ))}
                   </div>
                   {project.link !== '#' && (
                     <a 

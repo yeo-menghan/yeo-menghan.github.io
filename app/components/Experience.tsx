@@ -13,6 +13,13 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
+    company: 'NUS Office of Internal Audit',
+    role: 'Software Engineer Intern',
+    period: 'Sep 2025 - Current',
+    description: 'Developing AI-powered solutions to enhance audit processes and data analysis',
+    highlights: ['Document Tampering Detection', 'AI-Generated Receipt Detection']
+  },
+  {
     company: 'Changi Airport Group',
     role: 'Machine Learning Engineer Intern',
     period: 'May 2025 - Aug 2025',
@@ -23,15 +30,15 @@ const experiences: ExperienceItem[] = [
     company: 'Cisco-NUS Accelerated Digital Economy Lab',
     role: 'Research Assistant',
     period: 'Jan 2025 - May 2025',
-    description: 'Developed real-time computer vision systems for human tracking and motion analysis',
+    description: 'Built real-time computer vision systems for human tracking and motion analysis in surgical environments',
     highlights: ['YOLOv8 + DEEPSort', '84% mAP Accuracy', '15 FPS Real-time', 'Digital Twinning']
   },
   {
     company: 'Rockship (NUS Overseas College Vietnam)',
     role: 'AI & Computer Vision Engineer Intern',
     period: 'Jan 2024 - Jun 2024',
-    description: 'Built production-ready RAG pipelines and computer vision solutions',
-    highlights: ['RAG Pipelines', 'LlamaIndex APIs', '+20pp mAP Improvement', 'ARKit Integration']
+    description: 'Built production-ready RAG pipelines and edge computer vision solutions',
+    highlights: ['RAG Pipelines', 'LlamaIndex APIs', 'Swift App with CoreML & ARKit Integration']
   },
   {
     company: 'DSTA Land Systems',

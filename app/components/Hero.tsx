@@ -18,15 +18,9 @@ export default function Hero() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-slate-900/80 backdrop-blur-md z-40 border-b border-slate-700">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          {/* 🔗 Logo linking to Rick Roll */}
-          <a
-            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 hover:text-blue-400 transition-colors"
-          >
+          <button onClick={() => scrollToSection('about')}>
             <Code2 size={28} />
-          </a>
+          </button>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex gap-6 items-center">
@@ -68,7 +62,7 @@ export default function Hero() {
       </nav>
 
       {/* Hero Content */}
-      <div className="max-w-6xl mx-auto w-full px-6 mt-24"> {/* ⬅ Added px-6 and mt-24 for spacing/alignment */}
+      <div className="max-w-6xl mx-auto w-full px-6 mt-24"> 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -94,8 +88,6 @@ export default function Hero() {
 
           <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl leading-relaxed">
             Building intelligent systems with Machine Learning, AI / LLMs, and Computer Vision. 
-            NUS Engineering Scholar specialising in end-to-end ML solutions 
-            from research to production deployment.
           </p>
 
           <div className="mb-8">
@@ -110,17 +102,29 @@ export default function Hero() {
                 <p className="text-sm text-slate-300">AISG National AI Challenge 2024</p>
               </div>
               {/* <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700">
-                <p className="text-3xl font-bold text-green-400 mb-1">122%</p>
-                <p className="text-sm text-slate-300">WER for SG-English ASR (from 122%)</p>
+                <p className="text-3xl font-bold text-green-400 mb-1">MSc DSML</p>
+                <p className="text-sm text-slate-300">Currently pursuing masters at NUS!</p>
               </div> */}
+              <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700">
+                <a 
+                  href="https://www.math.nus.edu.sg/ms-dsml-v1/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-3xl font-bold text-green-400 mb-1 inline-block"
+                >
+                  MSc DSML<span className="align-super text-sm ml-1">↗</span>
+                </a>
+                <p className="text-sm text-slate-300">Currently pursuing masters at NUS!</p>
+              </div>
+
             </div>
           </div>
 
           {/* Personal Intro Section */}
           <div className="mb-8 max-w-3xl">
             <p className="text-lg md:text-xl text-slate-300 leading-relaxed">
-              Outside of tech, I'm a huge <span className="text-slate-200 font-medium">FPS, League of Legends, football and Formula 1</span> fan, 
-              love exploring music and cycling routes, and enjoy learning how systems - both human and digital - connect and evolve.
+              Outside of tech, I'm a huge <span className="text-slate-200 font-medium">gamer and football</span> fan, 
+              love exploring music and cycling routes, and enjoy learning about civilisations and history. 
             </p>
           </div>
 
