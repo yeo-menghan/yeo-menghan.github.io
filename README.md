@@ -27,6 +27,11 @@ yarn dev
 pnpm dev
 # or
 bun dev
+
+# Build & Run in production:
+npx next build
+
+npx next start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
