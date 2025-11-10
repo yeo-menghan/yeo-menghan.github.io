@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: 'Yeo Meng Han Portfolio',
     images: [
       {
-        url: 'https://yeo-menghan.github.io/public/chess.svg', // Replace with your Open Graph image URL
+        url: '/chess.svg',
         width: 1200,
         height: 630,
         alt: 'Yeo Meng Han - AI/ML Engineer',
