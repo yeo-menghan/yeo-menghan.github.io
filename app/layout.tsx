@@ -1,10 +1,11 @@
-// app/layout.tsx
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import './globals.css';
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import ThemeProvider from "@/components/ThemeProvider";
+import Navigation from "@/components/Navigation";
+import Chatbot from "@/components/Chatbot";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: 'Yeo Meng Han - AI/ML Engineer',
@@ -46,18 +47,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en" dir="ltr" className="scroll-smooth">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </head>
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        {children}
-        <SpeedInsights />
+        <ThemeProvider>
+          <div className="min-h-screen bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors">
+            <Navigation />
+            <main className="container mx-auto px-4 py-8 max-w-6xl">
+              {children}
+            </main>
+            <Chatbot />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,24 +1,85 @@
-/* app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply antialiased;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+  }
 }
 
-::-webkit-scrollbar {
-  width: 10px;
+/* KaTeX styles for math rendering */
+.katex { font-size: 1.1em; }
+
+/* Markdown styles */
+.prose {
+  @apply text-slate-700 dark:text-slate-300;
 }
 
-::-webkit-scrollbar-track {
-  @apply bg-slate-900;
+.prose h1 {
+  @apply text-3xl font-bold mt-8 mb-4 text-slate-900 dark:text-white;
 }
 
-::-webkit-scrollbar-thumb {
-  @apply bg-slate-600 rounded-full;
+.prose h2 {
+  @apply text-2xl font-bold mt-6 mb-3 text-slate-900 dark:text-white;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-slate-500;
+.prose h3 {
+  @apply text-xl font-semibold mt-4 mb-2 text-slate-900 dark:text-white;
+}
+
+.prose p {
+  @apply mb-4 leading-relaxed;
+}
+
+.prose code {
+  @apply bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm;
+}
+
+.prose pre {
+  @apply bg-slate-100 dark:bg-slate-800 p-4 rounded-lg overflow-x-auto mb-4;
+}
+
+.prose ul {
+  @apply list-disc list-inside mb-4 space-y-2;
+}
+
+.prose ol {
+  @apply list-decimal list-inside mb-4 space-y-2;
+}
+
+.prose a {
+  @apply text-blue-600 dark:text-blue-400 hover:underline;
+}
+
+@layer utilities {
+  @keyframes wave {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    10%, 30% {
+      transform: rotate(14deg);
+    }
+    20% {
+      transform: rotate(-8deg);
+    }
+    40% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+  }
+
+  .animate-wave {
+    animation: wave 2.5s infinite;
+    display: inline-block;
+    transform-origin: 70% 70%;
+  }
 }
