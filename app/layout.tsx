@@ -4,11 +4,15 @@ import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
 import Navigation from "@/components/Navigation";
 import Chatbot from "@/components/Chatbot";
+import StructuredData from "@/components/StructuredData";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Yeo Meng Han - AI/ML Engineer',
+  title: {
+    default: 'Yeo Meng Han - AI/ML Engineer',
+    template: '%s | Yeo Meng Han'
+  },
   description: 'Portfolio of Yeo Meng Han, AI/ML Engineer specializing in RAG, LLMs, and Computer Vision',
   keywords: [
     'Yeo Meng Han',
@@ -25,16 +29,33 @@ export const metadata: Metadata = {
     'National University of Singapore',
     'Python'
   ],
-  authors: [{ name: 'Yeo Meng Han', url: 'https://yeo-menghan.github.io/' }],
-  robots: 'index, follow',
+  authors: [{ name: 'Yeo Meng Han', url: 'https://yeo-menghan.com/' }],
+  creator: 'Yeo Meng Han',
+  publisher: 'Yeo Meng Han',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: '/chess.svg',
+    shortcut: '/chess.svg',
+    apple: '/chess.svg',
+  },
   openGraph: {
     title: 'Yeo Meng Han - AI/ML Engineer',
     description: 'Portfolio of Yeo Meng Han, AI/ML Engineer specializing in RAG, LLMs, and Computer Vision',
-    url: 'https://yeo-menghan.github.io/',
+    url: 'https://yeo-menghan.com/',
     siteName: 'Yeo Meng Han Portfolio',
     images: [
       {
-        url: '/chess.svg',
+        url: 'https://yeo-menghan.com/chess.svg', // Use absolute URL
         width: 1200,
         height: 630,
         alt: 'Yeo Meng Han - AI/ML Engineer',
@@ -42,7 +63,17 @@ export const metadata: Metadata = {
     ],
     locale: 'en_US',
     type: 'website',
-  },  
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Yeo Meng Han - AI/ML Engineer',
+    description: 'Portfolio of Yeo Meng Han, AI/ML Engineer specializing in RAG, LLMs, and Computer Vision',
+    images: ['https://yeo-menghan.com/chess.svg'],
+  },
+  metadataBase: new URL('https://yeo-menghan.com'),
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default function RootLayout({
@@ -52,6 +83,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <StructuredData />
+      </head>
       <body className={inter.className}>
         <ThemeProvider>
           <div className="min-h-screen bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors">
