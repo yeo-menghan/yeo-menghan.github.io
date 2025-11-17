@@ -42,7 +42,6 @@ Increased forecasting accuracy from **48% to 62%** through:
 - Conducted EDA on **18,000+ flight turnarounds**
 - Identified operational bottlenecks
 - Built automated data pipeline on **Amazon SageMaker**
-- Reduced processing time from **12 to 8.5 hours** (29% improvement)
 
 ## Business Impact
 The improved forecasting enables better resource allocation, reducing passenger wait times and improving overall airport experience.

@@ -13,7 +13,7 @@ export default function AboutPage() {
         </p>
         <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
           I&apos;m currently pursuing a Master of Science in Data Science and Machine Learning at the National University of Singapore, 
-          where I&apos;m deep-diving into the fascinating world of Large Language Models and Diffusion Models. With a background in 
+          where I&apos;m deep-diving into the fascinating world of Large Language Models, Big Data and Machine Learning Algorithms. With a background in 
           Computer Engineering and hands-on experience across machine learning, computer vision, and AI systems, I love turning 
           complex problems into elegant solutions.
         </p>
@@ -59,11 +59,11 @@ export default function AboutPage() {
           </li>
           <li className="flex gap-2">
             <span className="text-blue-600 dark:text-blue-400">→</span>
-            <span>Diffusion Models and their applications in generative AI</span>
+            <span>Diffusion Models and their applications in generative AI (Stable Diffusion, LoRAs and VideoGen)</span>
           </li>
           <li className="flex gap-2">
             <span className="text-blue-600 dark:text-blue-400">→</span>
-            <span>Scalable ML systems and distributed computing for data science</span>
+            <span>Scalable ML systems and distributed computing for data science using Apache Spark on GCP Dataproc</span>
           </li>
         </ul>
       </section>
@@ -127,7 +127,7 @@ export default function AboutPage() {
           <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
             <h3 className="font-semibold mb-2">Beyond Code</h3>
             <p className="text-sm text-slate-700 dark:text-slate-300">
-              Reading research papers, exploring new AI tools, and staying curious about the future of technology
+              Cycling, photography, anime, gaming and exploring new parts of the world!
             </p>
           </div>
         </div>

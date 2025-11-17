@@ -48,3 +48,6 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ## Technologies used
 
 ![](https://skillicons.dev/icons?i=nextjs,tailwind,ts,github,githubactions,yarn)
+
+## Roadmap
+- [ ] Use LangChain - LangFuse for LLM telemetry (token tracking, input-output etc.)
