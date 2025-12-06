@@ -13,9 +13,14 @@ export default function AboutPage() {
         </p>
         <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
           I&apos;m currently pursuing a Master of Science in Data Science and Machine Learning at the National University of Singapore, 
-          where I&apos;m deep-diving into the fascinating world of Large Language Models, Big Data and Machine Learning Algorithms. With a background in 
+          where I&apos;m deep-diving into the fascinating world of Big Data and Machine Learning Algorithms. With a background in 
           Computer Engineering and hands-on experience across machine learning, computer vision, and AI systems, I love turning 
           complex problems into elegant solutions.
+
+          <br></br>
+          <br></br>
+
+          Outside of tech, I deeply enjoy cycling, photography, anime, gaming and exploring new parts of the world!
         </p>
       </section>
 
@@ -41,6 +46,15 @@ export default function AboutPage() {
               First Class Honours | GPA: 4.51/5.00 | Engineering Scholarship Programme
             </p>
           </div>
+
+          <div className="border-l-4 border-purple-600 dark:border-purple-400 pl-4">
+            <h3 className="font-semibold text-lg">A Levels</h3>
+            <p className="text-slate-600 dark:text-slate-400">Hwa Chong Institution</p>
+            <p className="text-sm text-slate-500 dark:text-slate-500">January 2014 - December 2019</p>
+            <p className="mt-2 text-slate-700 dark:text-slate-300">
+              Infocomm Club | Students' Council | Volunteering
+            </p>
+          </div>
         </div>
       </section>
 
@@ -50,16 +64,16 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold">What I&apos;m Working On</h2>
         </div>
         <p className="text-slate-700 dark:text-slate-300 mb-4">
-          Currently exploring the frontiers of AI through my graduate studies, with a particular focus on:
+          Currently exploring the frontiers of AI through my graduate studies and personal ventures, with a particular focus on:
         </p>
         <ul className="space-y-2 text-slate-700 dark:text-slate-300">
           <li className="flex gap-2">
             <span className="text-blue-600 dark:text-blue-400">→</span>
-            <span>Advanced techniques in Large Language Models, including RAG systems and fine-tuning strategies</span>
+            <span>Operating small local LLMs - RAG, fine-tuning, quantisation to optimise performance on limited compute</span>
           </li>
           <li className="flex gap-2">
             <span className="text-blue-600 dark:text-blue-400">→</span>
-            <span>Diffusion Models and their applications in generative AI (Stable Diffusion, LoRAs and VideoGen)</span>
+            <span>Diffusion Models and their applications in generative AI (Stable Diffusion, LoRAs, Pose Estimation and VideoGen)</span>
           </li>
           <li className="flex gap-2">
             <span className="text-blue-600 dark:text-blue-400">→</span>
@@ -74,6 +88,21 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold">Experience Highlights</h2>
         </div>
         <div className="space-y-6">
+
+          <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-6">
+            <div className="flex justify-between items-start mb-2">
+              <h3 className="font-semibold text-lg">AI Engineer Intern</h3>
+              <span className="text-sm text-slate-500 dark:text-slate-400">Sep 2025 - Present</span>
+            </div>
+            <p className="text-blue-600 dark:text-blue-400 mb-3">NUS Office of Internal Audit</p>
+            <p className="text-slate-700 dark:text-slate-300">
+              <span className="text-blue-600 dark:text-blue-400">→</span>
+              <span> PDF Tampering detection using OCR, similarity analysis, metadata forensics and pdf xref structure analysis</span> <br></br>
+              <span className="text-blue-600 dark:text-blue-400">→</span>
+              <span> Research on detecting AI-generated receipts from unified multimodal LLMs</span>
+            </p>
+          </div>
+
           <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-6">
             <div className="flex justify-between items-start mb-2">
               <h3 className="font-semibold text-lg">Machine Learning Engineer Intern</h3>
@@ -81,8 +110,12 @@ export default function AboutPage() {
             </div>
             <p className="text-blue-600 dark:text-blue-400 mb-3">Changi Airport Group</p>
             <p className="text-slate-700 dark:text-slate-300">
-              Enhanced taxi demand forecasting accuracy from 48% to 62% using XGBoost, deployed models via CI/CD pipeline 
-              to AWS, and built automated data pipelines reducing processing time by 29%.
+              <span className="text-blue-600 dark:text-blue-400">→</span>
+              <span> Taxi demand forecasting using XGBoost</span> <br></br>
+              <span className="text-blue-600 dark:text-blue-400">→</span>
+              <span> Aircraft arrival and departure data analysis</span> <br></br>
+              <span className="text-blue-600 dark:text-blue-400">→</span>
+              <span> Automated data cleaning pipelines on AWS </span> <br></br>
             </p>
           </div>
 
@@ -93,8 +126,10 @@ export default function AboutPage() {
             </div>
             <p className="text-blue-600 dark:text-blue-400 mb-3">Cisco-NUS Accelerated Digital Economy Lab</p>
             <p className="text-slate-700 dark:text-slate-300">
-              Implemented DEEPSort with YOLOv8 for real-time human tracking achieving 84% mAP at 15FPS, and developed 
-              data pipeline for low-latency bounding box streaming in digital-twinning applications.
+              <span className="text-blue-600 dark:text-blue-400">→</span>
+              <span> DEEPSort + YOLOv8 for real-time human tracking from overhead fisheye camera</span> <br></br>
+              <span className="text-blue-600 dark:text-blue-400">→</span>
+              <span> Data pipeline for low-latency bounding box streaming in digital twinning applications</span> <br></br>
             </p>
           </div>
 
@@ -105,14 +140,18 @@ export default function AboutPage() {
             </div>
             <p className="text-blue-600 dark:text-blue-400 mb-3">Rockship (NUS Overseas College Vietnam)</p>
             <p className="text-slate-700 dark:text-slate-300">
-              Built RAG pipeline using LangChain ingesting 50+ n8n workflows, developed scalable LlamaIndex RAG APIs, 
-              and improved YOLOv8 object detection mAP by 20 percentage points.
+              <span className="text-blue-600 dark:text-blue-400">→</span>
+              <span> RAG pipeline with Langchain ingesting 50+ n8n workflows for n8n node & workflow generation</span> <br></br>
+              <span className="text-blue-600 dark:text-blue-400">→</span>
+              <span> Boilerplate internal tooling for scalable LlamaIndex RAG APIs</span> <br></br>
+              <span className="text-blue-600 dark:text-blue-400">→</span>
+              <span> YOLOv8 object detection to detect nails on wall and check alignment</span> <br></br>
             </p>
           </div>
         </div>
       </section>
 
-      <section>
+      {/* <section>
         <div className="flex items-center gap-2 mb-6">
           <Heart className="text-blue-600 dark:text-blue-400" />
           <h2 className="text-2xl font-bold">Interests</h2>
@@ -129,6 +168,54 @@ export default function AboutPage() {
             <p className="text-sm text-slate-700 dark:text-slate-300">
               Cycling, photography, anime, gaming and exploring new parts of the world!
             </p>
+          </div>
+        </div>
+      </section> */}
+
+      <section>
+        <div className="flex items-center gap-2 mb-6">
+          <Heart className="text-blue-600 dark:text-blue-400" />
+          <h2 className="text-2xl font-bold">Skillset</h2>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
+            <h3 className="font-semibold mb-2">Programming & Web</h3>
+            <ul className="text-sm text-slate-700 dark:text-slate-300 list-disc list-inside space-y-1">
+              <li>Python</li>
+              <li>C, C++</li>
+              <li>TypeScript</li>
+              <li>Next.js</li>
+              <li>FastAPI</li>
+            </ul>
+          </div>
+          <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
+            <h3 className="font-semibold mb-2">AI & Machine Learning</h3>
+            <ul className="text-sm text-slate-700 dark:text-slate-300 list-disc list-inside space-y-1">
+              <li>PyTorch</li>
+              <li>TensorFlow</li>
+              <li>NLP / LLMs</li>
+              <li>Image / Video Gen</li>
+              <li>LangChain / LlamaIndex</li>
+            </ul>
+          </div>
+          <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
+            <h3 className="font-semibold mb-2">Data & Cloud</h3>
+            <ul className="text-sm text-slate-700 dark:text-slate-300 list-disc list-inside space-y-1">
+              <li>MySQL</li>
+              <li>MongoDB</li>
+              <li>Tableau</li>
+              <li>AWS</li>
+              <li>GCP</li>
+            </ul>
+          </div>
+          <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
+            <h3 className="font-semibold mb-2">DevOps & Others</h3>
+            <ul className="text-sm text-slate-700 dark:text-slate-300 list-disc list-inside space-y-1">
+              <li>Docker</li>
+              <li>GitHub Actions</li>
+              <li>Git</li>
+              <li>Computer Networks</li>
+            </ul>
           </div>
         </div>
       </section>
