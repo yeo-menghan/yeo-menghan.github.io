@@ -52,7 +52,7 @@ export default function AboutPage() {
             <p className="text-slate-600 dark:text-slate-400">Hwa Chong Institution</p>
             <p className="text-sm text-slate-500 dark:text-slate-500">January 2014 - December 2019</p>
             <p className="mt-2 text-slate-700 dark:text-slate-300">
-              Infocomm Club | Students' Council | Volunteering
+              Infocomm Club | Students&apos;s Council | Volunteering
             </p>
           </div>
         </div>
