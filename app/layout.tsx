@@ -5,6 +5,7 @@ import ThemeProvider from "@/components/ThemeProvider";
 import Navigation from "@/components/Navigation";
 import Chatbot from "@/components/Chatbot";
 import StructuredData from "@/components/StructuredData";
+import { Analytics } from "@vercel/analytics/next"; 
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -96,6 +97,7 @@ export default function RootLayout({
             <Chatbot />
           </div>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
