@@ -100,3 +100,7 @@
 .dark .prose input[type="checkbox"] {
   accent-color: #60a5fa;
 }
+
+html {
+  scrollbar-gutter: stable;
+}

@@ -2,7 +2,7 @@
 title: "SG-English ASR"
 description: "Fine-tuned Whisper and Wav2Vec2 models for Singaporean English accent recognition"
 date: "2025-02-15"
-tags: ["Machine Learning", "NLP", "PyTorch"]
+tags: ["Machine Learning", "NLP", "PyTorch", "Python"]
 github: "https://github.com/yeo-menghan/SG_Eng_ASR"
 ---
 

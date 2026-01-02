@@ -2,7 +2,7 @@
 title: "AISG National AI Challenge 2024"
 description: "Top 3 Winner - Email fraud detection system using LangChain and GPT-3.5"
 date: "2024-05-20"
-tags: ["LLM", "LangChain", "Chrome Extension"]
+tags: ["LLM", "LangChain", "Chrome Extension", "JavaScript"]
 github: "https://github.com/aisg-2024/langchain_backend"
 ---
 

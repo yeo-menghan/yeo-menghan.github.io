@@ -90,7 +90,8 @@ export default function AboutPage() {
         <div className="space-y-6">
 
           <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-6">
-            <div className="flex justify-between items-start mb-2">
+            {/* <div className="flex justify-between items-start mb-2"> */}
+            <div className="flex flex-col sm:flex-row sm:justify-between items-start mb-2 gap-1">
               <h3 className="font-semibold text-lg">AI Engineer Intern</h3>
               <span className="text-sm text-slate-500 dark:text-slate-400">Sep 2025 - Present</span>
             </div>
@@ -104,7 +105,8 @@ export default function AboutPage() {
           </div>
 
           <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-6">
-            <div className="flex justify-between items-start mb-2">
+            {/* <div className="flex justify-between items-start mb-2"> */}
+            <div className="flex flex-col sm:flex-row sm:justify-between items-start mb-2 gap-1">
               <h3 className="font-semibold text-lg">Machine Learning Engineer Intern</h3>
               <span className="text-sm text-slate-500 dark:text-slate-400">May - Aug 2025</span>
             </div>
@@ -120,7 +122,7 @@ export default function AboutPage() {
           </div>
 
           <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-6">
-            <div className="flex justify-between items-start mb-2">
+            <div className="flex flex-col sm:flex-row sm:justify-between items-start mb-2 gap-1">
               <h3 className="font-semibold text-lg">Computer Vision Research Assistant</h3>
               <span className="text-sm text-slate-500 dark:text-slate-400">Jan - May 2025</span>
             </div>
@@ -134,7 +136,8 @@ export default function AboutPage() {
           </div>
 
           <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-6">
-            <div className="flex justify-between items-start mb-2">
+            {/* <div className="flex justify-between items-start mb-2"> */}
+            <div className="flex flex-col sm:flex-row sm:justify-between items-start mb-2 gap-1">
               <h3 className="font-semibold text-lg">AI & Computer Vision Engineer Intern</h3>
               <span className="text-sm text-slate-500 dark:text-slate-400">Jan - Jun 2024</span>
             </div>
@@ -146,6 +149,20 @@ export default function AboutPage() {
               <span> Boilerplate internal tooling for scalable LlamaIndex RAG APIs</span> <br></br>
               <span className="text-blue-600 dark:text-blue-400">→</span>
               <span> YOLOv8 object detection to detect nails on wall and check alignment</span> <br></br>
+            </p>
+          </div>
+
+          <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-6">
+            <div className="flex flex-col sm:flex-row sm:justify-between items-start mb-2 gap-1">
+              <h3 className="font-semibold text-lg">Robotics Engineer Intern</h3>
+              <span className="text-sm text-slate-500 dark:text-slate-400">May - July 2023</span>
+            </div>
+            <p className="text-blue-600 dark:text-blue-400 mb-3">DSTA Land Systems</p>
+            <p className="text-slate-700 dark:text-slate-300">
+              <span className="text-blue-600 dark:text-blue-400">→</span>
+              <span> Implemented the state-of-the-art RTAB-Map Visual SLAM algorithm on DJI RoboMaster to enable real-time mapping and localization for reconnaissance missions.</span> <br></br>
+              <span className="text-blue-600 dark:text-blue-400">→</span>
+              <span> Designed a scalable multi-robot framework that force-multiplies robotic capabilities by integrating robots with a central platform via ROS and MQTT.</span> <br></br>
             </p>
           </div>
         </div>

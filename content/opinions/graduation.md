@@ -1,7 +1,7 @@
 ---
 title: "Reflections on My Computer Engineering Journey at NUS"
 excerpt: "Looking back on three years of growth, challenges, and discovery at NUS—from NS to Masters."
-date: "2025-16-08"
+date: "2025-08-16"
 readTime: "7 min read"
 ---
 

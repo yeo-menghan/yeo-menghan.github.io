@@ -30,7 +30,7 @@ export default function ProjectsClient({ projects, allTags }: { projects: Projec
   });
 
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="max-w-4xl mx-auto">
       <div className="mb-8">
         <h1 className="text-4xl font-bold mb-4">Projects</h1>
         <p className="text-xl text-slate-600 dark:text-slate-400">

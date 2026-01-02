@@ -1,7 +1,7 @@
 ---
 title: "Organising a Hackathon"
 excerpt: "Organised NUS Computing Club's annual hackathon - LifeHack 2023"
-date: "2025-06-12"
+date: "2025-12-06"
 readTime: "5 min read"
 ---
 
