@@ -38,7 +38,8 @@
   @apply mb-4 leading-relaxed;
 }
 
-.prose code {
+/* Inline code only */
+.prose :not(pre) > code {
   @apply bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm;
 }
 
@@ -111,4 +112,15 @@ html {
 
 .dark .prose mark {
   @apply rounded bg-yellow-500;
+}
+
+/* Center images inside markdown prose */
+.prose img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+  border-radius: 0.5rem;
 }

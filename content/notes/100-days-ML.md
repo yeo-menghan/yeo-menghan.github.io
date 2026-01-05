@@ -1,7 +1,7 @@
 ---
 title: "100 Days of Machine Learning"
 date: "2026-01-05"
-category: "100-days-challenge"
+category: "100-days-ml-challenge"
 ---
 
 I recently came across a [Medium article](https://medium.com/@bhatadithya54764118/my-journey-through-100-days-of-machine-learning-lessons-beyond-algorithms-b63770473864) on completing *100 days of Machine Learning*, and it struck a chord with me. Not because it promised mastery in a fixed timeframe, but because it emphasized something far more important: **discipline**. That’s what I want to build this year (2026)
