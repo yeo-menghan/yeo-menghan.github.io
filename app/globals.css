@@ -104,3 +104,11 @@
 html {
   scrollbar-gutter: stable;
 }
+
+.prose mark {
+  @apply rounded bg-yellow-200;
+}
+
+.dark .prose mark {
+  @apply rounded bg-yellow-500;
+}

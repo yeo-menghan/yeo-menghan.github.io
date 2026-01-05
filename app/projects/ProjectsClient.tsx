@@ -89,6 +89,8 @@ export default function ProjectsClient({ projects, allTags }: { projects: Projec
             date={project.date}
             tags={project.tags || []}
             slug={project.slug}
+            github={project.github}
+            link={project.link}
           />
         ))}
       </div>

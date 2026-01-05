@@ -100,7 +100,7 @@ export default function AboutPage() {
               <span className="text-blue-600 dark:text-blue-400">→</span>
               <span> PDF Tampering detection using OCR, similarity analysis, metadata forensics and pdf xref structure analysis</span> <br></br>
               <span className="text-blue-600 dark:text-blue-400">→</span>
-              <span> Research on detecting AI-generated receipts from unified multimodal LLMs</span>
+              <span> Research on detecting AI-generated receipts generated using unified multimodal LLMs (e.g. Gemini, ChatGPT)</span>
             </p>
           </div>
 

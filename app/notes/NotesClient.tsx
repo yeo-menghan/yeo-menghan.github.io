@@ -61,7 +61,7 @@ export default function NotesClient({ notes, categories }: { notes: Note[], cate
 
       <div className="space-y-4">
         {filteredNotes.map(note => (
-          <Link key={note.slug} href={`/notes/${note.slug}`}>
+          <Link key={note.slug} href={`/notes/${note.slug}`} className='block'>
             <article className="border border-slate-200 dark:border-slate-700 rounded-lg p-6 hover:shadow-lg dark:hover:shadow-slate-800/50 transition-all hover:border-blue-500 dark:hover:border-blue-500 group">
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1">

@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export async function generateStaticParams() {
   const projects = getContentByType('projects');
-  return projects.map(project => ({
+  return projects.map((project) => ({
     slug: project.slug,
   }));
 }
@@ -20,7 +20,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 
   return (
     <div className="max-w-4xl mx-auto">
-      <Link 
+      <Link
         href="/projects"
         className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline mb-8"
       >
@@ -31,13 +31,15 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
       <article>
         <header className="mb-8">
           <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
+
           <div className="flex flex-wrap items-center gap-4 text-slate-600 dark:text-slate-400 mb-4">
             <div className="flex items-center gap-2">
               <Calendar size={18} />
               <span>{project.date}</span>
             </div>
+
             {project.github && (
-              <a 
+              <a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -47,7 +49,20 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                 View on GitHub
               </a>
             )}
+
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                <ExternalLink size={18} />
+                View Project
+              </a>
+            )}
           </div>
+
           <div className="flex flex-wrap gap-2">
             {project.tags?.map((tag: string) => (
               <span

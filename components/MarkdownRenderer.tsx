@@ -3,6 +3,7 @@
 import ReactMarkdown from 'react-markdown';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import rehypeRaw from 'rehype-raw';
 import 'katex/dist/katex.min.css';
 
 interface MarkdownRendererProps {
@@ -14,7 +15,10 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
     <div className="prose prose-slate dark:prose-invert max-w-none">
       <ReactMarkdown
         remarkPlugins={[remarkMath]}
-        rehypePlugins={[rehypeKatex]}
+        rehypePlugins={[rehypeRaw, rehypeKatex]}
+        components={{
+          mark: ({ children }) => <mark>{children}</mark>,
+        }}
       >
         {content}
       </ReactMarkdown>
