@@ -31,13 +31,17 @@ CI/CD using github actions:
 
 I've utilised the datacamp tutorial to set up the file structure and experimented in recreating the ci.yml pipeline. Given the tutorial was 2 years old, there were some removed features for model loading from skops that requires refactoring. 
 
-The harder part was creating the cd.yml and AWS configurations. Using GPT-5.2-instant, I've troubleshooted and created a working cd.yml pipeline which triggers after the completion of ci.yml. I've also added .elasticbeanstalk config.yml, .config files and .ebextensions. The gradio app also needs some configuration to suit the beanstalk environment.
+The `ci.yml` is pretty cool because it actually sends a report of the model's metrics to the user's email:
+
+![email-report](/1-100daysml/email-report.png)
+
+The harder part was creating the cd.yml and AWS configurations. Using GPT-5.2-instant, I've troubleshooted and created a working cd.yml pipeline which triggers after the completion of `ci.yml`. I've also added `.elasticbeanstalk` `config.yml`, `.config` files and `.ebextensions`. The gradio app also needs some configuration to suit the beanstalk environment.
 
 ![ci.yml](/1-100daysml/ci.png)
 
 ![cd.yml](/1-100daysml/cd.png)
 
-The hardest part was porting over my previous AWS configurations (from my school account) to my personal account for future usage. This requires the creation of access keys with adminRoles and re-configuring the aws credentials and config on my laptop.
+The hardest part was porting over my previous `AWS configurations` (from my school account) to my personal account for future usage. This requires the creation of access keys with adminRoles and re-configuring the aws credentials and config on my laptop.
 
 These are some helpful commands to establish your aws account locally
 ```bash
@@ -49,7 +53,7 @@ aws configure # should ensure that the config is default
 ```
 
 ## Results
-However, I'm met with an unexpected 502 Bad Gateway after successfully deploying the beanstalk environment. Troubleshooting will continue for Day 2 of the challenge but I believe it may have to do with Nginx and gradio.
+However, I'm met with an <mark>unexpected 502 Bad Gateway</mark> after successfully deploying the beanstalk environment. Troubleshooting will continue for Day 2 of the challenge but I believe it may have to do with Nginx and gradio.
 
 ![gateaway.yml](/1-100daysml/bad-gateway.png)
 
