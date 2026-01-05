@@ -30,7 +30,7 @@ A few things to decide: 1. Hackathon's theme 2. Date and duration 3. Venue (cost
 - A 3 days' long hackathon with a final judgement day to balance between a proper working prototype and participant's attention span
 - Venue is pre-decided to be RC4 
 - Logistics and fun-fare is decided mostly by the amount of sponsorship money we can get (which I will deep dive into under challenges)
-- Sponsorship is out of the team's control; NUS Computing Club is the one deciding
+- Sponsorship is out of the team's control; NUS Computing Club is the one deciding but the team handles the sponsors' logos on our merchandise
 
 4. **PLAN**
 - Design logo, merchandise (shirt, lanyard) - most difficult part of the sponsor's section (haha)
@@ -50,6 +50,8 @@ Personal Challenges:
 
 ## Conclusion
 
-In hindsight, I believe that this hackathon needed more direction and vibes; things would have been a lot more fun if it's integrated as a part of the Computing Club rather than as a subsidiary 'contracted' role (as the PD, I wasn't officially part of the Computing Club). The best hackathon I've been are all about vibes and the right support - participants want their hacks and projects to mean something and to feel good when putting the work in.
+In hindsight, I believe that this hackathon needed more direction and vibes. Personally, I should have been more proactive in team-bonding activities and cohesion with the members in Computing Club.  
+
+The best hackathon I've been are all about vibes and the right support - participants want their hacks and projects to mean something and to feel good when putting the work in.
 
 I do hope to whoever's reading this to consider these things in mind when planning a hackathon! **It's all about the VIBES**
