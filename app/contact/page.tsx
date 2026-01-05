@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin, MapPin } from 'lucide-react';
+import { Mail, Github, Linkedin, FileText, MapPin } from 'lucide-react';
 
 export default function ContactPage() {
   return (
@@ -64,6 +64,22 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+    
+      <a
+        href="/yeo-menghan-resume.pdf"
+        download
+        className="flex items-start gap-4 p-6 mb-12 border border-slate-200 dark:border-slate-700 rounded-lg hover:shadow-lg transition-all hover:border-blue-500 group"
+      >
+        <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+          <FileText className="text-blue-600 dark:text-blue-400 group-hover:text-white" size={24} />
+        </div>
+        <div>
+          <h3 className="font-semibold mb-1">Resume</h3>
+          <p className="text-slate-600 dark:text-slate-400 text-sm">
+            Download PDF
+          </p>
+        </div>
+      </a>
 
       <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-8">
         <h2 className="text-2xl font-bold mb-4">Let&apos;s Collaborate</h2>
