@@ -1,5 +1,5 @@
 ---
-title: "Day 1: ML Project Deployment using Github Actions & AWS Beanstalk"
+title: "Day 1: ML Project Deployment using Github Actions & AWS Beanstalk pt.1"
 date: "2026-01-05"
 category: "100-days-ml-challenge"
 ---
