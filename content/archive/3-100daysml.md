@@ -1,10 +1,12 @@
 ---
-title: "Day 2: ML Project Deployment using Github Actions & AWS Beanstalk pt.2"
-date: "2026-01-06"
+title: "Day 3: ML Project Deployment using Github Actions & AWS Beanstalk pt.2"
+date: "2026-01-07"
 category: "100-days-ml-challenge"
 ---
 
 Troubleshooting the deployment issue (502 Bad Gateway).
+
+Beanstalk vs ECS vs Cloudformations
 
 TODO
 - Understanding the tradeoffs between using AWS Elastic Beanstalk and Cloudformations
