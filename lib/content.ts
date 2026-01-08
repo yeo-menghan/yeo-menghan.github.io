@@ -10,6 +10,7 @@ export interface ContentItem {
   slug: string;
   title: string;
   date: string;
+  updatedDate?: string; 
   content: string;
   description?: string;
   excerpt?: string;
@@ -68,6 +69,7 @@ export function getContentByType(type: ContentType): ContentItem[] {
         slug: file.replace('.md', ''),
         title: data.title || '',
         date: data.date || '',
+        updatedDate: data.updatedDate ?? data.date, // 👈 IMPORTANT
         content,
         description: data.description,
         excerpt: data.excerpt,
@@ -78,6 +80,7 @@ export function getContentByType(type: ContentType): ContentItem[] {
         category: data.category,
         paper: data.paper,
       };
+
 
       // Validate required fields based on type
       if (type === 'projects' && !data.description) {

@@ -47,14 +47,25 @@
   @apply bg-slate-100 dark:bg-slate-800 p-4 rounded-lg overflow-x-auto mb-4;
 }
 
+/* Top-level lists */
 .prose ul {
-  @apply list-disc list-inside mb-4 space-y-2;
+  @apply list-disc list-outside mb-4 space-y-2 pl-6;
 }
 
 .prose ol {
-  @apply list-decimal list-inside mb-4 space-y-2;
+  @apply list-decimal list-outside mb-4 space-y-2 pl-6;
 }
 
+/* Nested unordered lists */
+.prose ul ul {
+  list-style-type: circle;
+  @apply mt-2 ml-4;
+}
+
+/* Optional: third level */
+.prose ul ul ul {
+  list-style-type: square;
+}
 .prose a {
   @apply text-blue-600 dark:text-blue-400 hover:underline;
 }

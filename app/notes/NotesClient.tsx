@@ -8,6 +8,7 @@ interface Note {
   slug: string;
   title: string;
   date: string;
+  updatedDate?: string;
   category: string;
   paper?: {
     title: string;
@@ -76,6 +77,11 @@ export default function NotesClient({ notes, categories }: { notes: Note[], cate
                     <div className="flex items-center gap-1">
                       <Calendar size={16} />
                       <span>{note.date}</span>
+                      {note.updatedDate && note.updatedDate !== note.date && (
+                        <span className="text-sm text-slate-400 dark:text-slate-500">
+                          • updated {note.updatedDate}
+                        </span>
+                      )}
                     </div>
                     {note.paper && (
                       <div className="flex items-center gap-1">
