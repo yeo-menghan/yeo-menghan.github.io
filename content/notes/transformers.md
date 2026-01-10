@@ -1,8 +1,8 @@
 ---
-title: "Day 3: Understanding Transformers"
+title: "Understanding Transformers"
 date: "2026-01-07"
 updatedDate: "2026-01-08"
-category: "100-days-ml-challenge"
+category: "LLMs"
 ---
 
 # Attention Is All You Need

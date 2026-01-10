@@ -1,6 +1,7 @@
 ---
 title: "100 Days of Machine Learning"
 date: "2026-01-05"
+updatedDate: "2026-01-10"
 category: "100-days-ml-challenge"
 ---
 
@@ -20,3 +21,8 @@ My long-term goal is to become a <mark>stronger ML engineer</mark> - someone who
 I don’t expect perfection. I do expect progress.
 
 Day 1 starts now.
+
+## Update (10th Jan 2026)
+I came to realise to learn in depth, I might need to write in cycles - each cycle is a deeper dive into the ML project, research etc.
+
+It might take weeks to complete 1 cycle but each time there will be a proper repository, artifact or report being written as opposed to daily posts which might be more superficial. So do look out for more of these in the upcoming weeks!
