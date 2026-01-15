@@ -16,9 +16,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    console.log('Request body:', body); // Debug log
-
-    const { message } = body;
+    const { message, sessionId } = body;
 
     // Validate message
     if (!message) {
@@ -43,7 +41,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Get AI response
-    const response = await queryRAG(message);
+    const response = await queryRAG(message, sessionId || 'anonymous-session');
 
     return NextResponse.json({ response });
   } catch (error) {

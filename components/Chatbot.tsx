@@ -9,6 +9,8 @@ interface Message {
 }
 
 export default function Chatbot() {
+  const [sessionId] = useState(() => `session_${Math.random().toString(36).slice(2, 11)}`);
+
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -46,12 +48,21 @@ export default function Chatbot() {
     try {
       console.log('Sending message:', userMessage); // Debug log
       
+      // const response = await fetch('/api/chat', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({ message: userMessage }),
+      // });
+
       const response = await fetch('/api/chat', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ message: userMessage }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          message: userMessage, 
+          sessionId: sessionId 
+        }),
       });
 
       console.log('Response status:', response.status); // Debug log

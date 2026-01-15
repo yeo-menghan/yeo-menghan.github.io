@@ -1,8 +1,14 @@
 import Groq from 'groq-sdk';
 import { getContentByType } from './content';
+import { Langfuse } from 'langfuse';
 
 const groq = new Groq({
   apiKey: process.env.GROQ_API_KEY,
+});
+const langfuse = new Langfuse({
+  publicKey: process.env.LANGFUSE_PUBLIC_KEY,
+  secretKey: process.env.LANGFUSE_SECRET_KEY,
+  baseUrl: process.env.LANGFUSE_BASEURL ?? "https://us.cloud.langfuse.com",
 });
 
 interface ContentChunk {
@@ -105,27 +111,102 @@ function retrieveRelevantContent(query: string, topK: number = 5): ContentChunk[
     .map(item => item.chunk);
 }
 
-export async function queryRAGAdvanced(userMessage: string): Promise<string> {
-  const relevantChunks = retrieveRelevantContent(userMessage);
-
-  let context = '';
+// export async function queryRAGAdvanced(userMessage: string): Promise<string> {
   
+//   const relevantChunks = retrieveRelevantContent(userMessage);
+
+//   let context = '';
+  
+//   if (relevantChunks.length > 0) {
+//     context = 'Here is the most relevant information from the website:\n\n';
+//     relevantChunks.forEach((chunk, index) => {
+//       context += `=== ${chunk.type.toUpperCase()}: ${chunk.title} ===\n`;
+//       context += `${chunk.content}\n\n`;
+//     });
+//   } else {
+//     // Fallback to general information
+//     context = `General information about Yeo Meng Han:
+// - Master of Science in Data Science and Machine Learning at NUS
+// - Bachelor of Engineering in Computer Engineering from NUS (First Class Honours)
+// - Specializes in Machine Learning, Computer Vision, and NLP
+// - Experience with ML engineering, research, and AI applications
+// - Skills: Python, PyTorch, TensorFlow, React, Next.js, AWS
+// - Email: yeomenghan1989@gmail.com
+// `;
+//   }
+
+//   const systemPrompt = `You are a helpful AI assistant representing Yeo Meng Han's personal website. Answer the user's question based on the following context.
+
+// <context>
+// ${context}
+// </context>
+
+// Guidelines:
+// - Be conversational and helpful
+// - If the question is about something not in the context, politely say so and suggest what topics you can help with
+// - When discussing projects, include specific details and achievements
+// - Suggest related content when appropriate
+// - Keep responses concise but informative`;
+
+//   try {
+//     const completion = await groq.chat.completions.create({
+//       messages: [
+//         {
+//           role: 'system',
+//           content: systemPrompt,
+//         },
+//         {
+//           role: 'user',
+//           content: userMessage,
+//         },
+//       ],
+//       model: 'llama-3.1-8b-instant',
+//       temperature: 0.3,
+//       max_tokens: 1024,
+//       top_p: 1,
+//       stream: false,
+//     });
+
+//     return completion.choices[0]?.message?.content || 'Sorry, I could not generate a response.';
+//   } catch (error) {
+//     console.error('Groq API Error:', error);
+//     throw new Error('Failed to get response from AI');
+//   }
+// }
+
+export async function queryRAGAdvanced(userMessage: string, sessionId: string): Promise<string> {
+  // Start the main Trace
+  const trace = langfuse.trace({
+    name: "portfolio-chatbot",
+    sessionId: sessionId,
+    input: userMessage,
+  });
+
+  // Track Retrieval (Span)
+  const retrievalSpan = trace.span({
+    name: "content-retrieval",
+    input: { query: userMessage },
+  });
+
+  const relevantChunks = retrieveRelevantContent(userMessage);
+  
+  retrievalSpan.end({
+    output: { count: relevantChunks.length },
+  });
+
+  // Build Context
+  let context = '';
   if (relevantChunks.length > 0) {
     context = 'Here is the most relevant information from the website:\n\n';
-    relevantChunks.forEach((chunk, index) => {
+    relevantChunks.forEach((chunk) => {
       context += `=== ${chunk.type.toUpperCase()}: ${chunk.title} ===\n`;
       context += `${chunk.content}\n\n`;
     });
   } else {
-    // Fallback to general information
     context = `General information about Yeo Meng Han:
 - Master of Science in Data Science and Machine Learning at NUS
-- Bachelor of Engineering in Computer Engineering from NUS (First Class Honours)
-- Specializes in Machine Learning, Computer Vision, and NLP
-- Experience with ML engineering, research, and AI applications
-- Skills: Python, PyTorch, TensorFlow, React, Next.js, AWS
-- Email: yeomenghan1989@gmail.com
-`;
+- Bachelor of Engineering from NUS (First Class Honours)
+- Email: yeomenghan1989@gmail.com`;
   }
 
   const systemPrompt = `You are a helpful AI assistant representing Yeo Meng Han's personal website. Answer the user's question based on the following context.
@@ -142,27 +223,59 @@ Guidelines:
 - Keep responses concise but informative`;
 
   try {
+    // Track AI Generation
+    const generation = trace.generation({
+      name: "groq-query",
+      model: "llama-3.1-8b-instant",
+      input: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userMessage }],
+    });
+
     const completion = await groq.chat.completions.create({
       messages: [
-        {
-          role: 'system',
-          content: systemPrompt,
-        },
-        {
-          role: 'user',
-          content: userMessage,
-        },
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userMessage },
       ],
       model: 'llama-3.1-8b-instant',
       temperature: 0.3,
       max_tokens: 1024,
-      top_p: 1,
-      stream: false,
     });
 
-    return completion.choices[0]?.message?.content || 'Sorry, I could not generate a response.';
+    const responseText = completion.choices[0]?.message?.content || 'No response generated.';
+
+    // Log tokens and end generation
+    generation.end({
+      output: responseText,
+      usage: {
+        promptTokens: completion.usage?.prompt_tokens,
+        completionTokens: completion.usage?.completion_tokens,
+        totalTokens: completion.usage?.total_tokens,
+      },
+    });
+
+    trace.update({ output: responseText });
+    return responseText;
+
   } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : "Unknown error";
+
+    // Log a specific Error Event (This is the "Langfuse way" to log errors)
+    // Events accept 'level' and 'statusMessage'
+    trace.event({
+      name: "chat-error",
+      level: "ERROR",
+      input: userMessage,
+      output: errorMessage,
+    });
+
+    // Update the trace output so you can see it in the main list
+    trace.update({
+      output: `Error: ${errorMessage}`
+    });
+
     console.error('Groq API Error:', error);
     throw new Error('Failed to get response from AI');
+  } finally {
+    // Ensure logs reach Langfuse before Vercel kills the function
+    await langfuse.flushAsync();
   }
 }
