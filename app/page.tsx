@@ -168,27 +168,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* <section>
-        <div className="flex items-center gap-2 mb-6">
-          <Heart className="text-blue-600 dark:text-blue-400" />
-          <h2 className="text-2xl font-bold">Interests</h2>
-        </div>
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
-            <h3 className="font-semibold mb-2">Technical</h3>
-            <p className="text-sm text-slate-700 dark:text-slate-300">
-              Deep learning architectures, LLMs, diffusion models, computer vision, and AI safety
-            </p>
-          </div>
-          <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
-            <h3 className="font-semibold mb-2">Beyond Code</h3>
-            <p className="text-sm text-slate-700 dark:text-slate-300">
-              Cycling, photography, anime, gaming and exploring new parts of the world!
-            </p>
-          </div>
-        </div>
-      </section> */}
-
       <section>
         <div className="flex items-center gap-2 mb-6">
           <Heart className="text-blue-600 dark:text-blue-400" />
