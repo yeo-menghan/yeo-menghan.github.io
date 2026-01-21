@@ -1,0 +1,19 @@
+{
+    "socials": [
+    {
+      "name": "LinkedIn",
+      "href": "https://www.linkedin.com/in/yeo-meng-han/",
+      "icon": "linkedin"
+    },
+    {
+      "name": "GitHub",
+      "href": "https://github.com/yeo-menghan",
+      "icon": "github"
+    },
+    {
+      "name": "Email",
+      "href": "mailto:yeomenghan1989@gmail.com",
+      "icon": "mail"
+    }
+  ]
+}

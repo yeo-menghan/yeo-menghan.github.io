@@ -1,0 +1,40 @@
+{
+  "routes": [
+    {
+      "path": "/",
+      "name": "home",
+      "description": "Portfolio overview, recent projects, and blog highlights",
+      "showInNav": true
+    },
+    {
+      "path": "/projects",
+      "name": "projects",
+      "description": "Portfolio projects showcase and personal notes",
+      "showInNav": true
+    },
+    {
+      "path": "/blog",
+      "name": "blog",
+      "description": "Blog posts and project updates",
+      "showInNav": true
+    },
+    {
+      "path": "/contact",
+      "name": "contact",
+      "description": "Contact form",
+      "showInNav": true
+    },
+    {
+      "path": "/privacy",
+      "name": "privacy",
+      "description": "Privacy policy",
+      "showInNav": false
+    },
+    {
+      "path": "/resume.pdf",
+      "name": "resume",
+      "description": "Meng Han's resume CV in pdf format",
+      "showInNav": false
+    }
+  ]
+}
