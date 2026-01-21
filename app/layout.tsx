@@ -89,12 +89,21 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <ThemeProvider>
-          <div className="min-h-screen bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors">
+          {/* <div className="min-h-screen bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors">
             <Navigation />
             <main className="container mx-auto px-4 py-8 max-w-6xl">
               {children}
             </main>
             <Chatbot />
+          </div> */}
+          <div className="min-h-screen bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors">
+            <div className="container mx-auto px-4 max-w-3xl">
+              <Navigation />
+              <main className="py-8">
+                {children}
+              </main>
+              <Chatbot />
+            </div>
           </div>
         </ThemeProvider>
         <Analytics />

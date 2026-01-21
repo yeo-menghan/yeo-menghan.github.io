@@ -1,27 +1,36 @@
 import { Briefcase, GraduationCap, Heart } from 'lucide-react';
+import CTABar from '@/components/CTABar';
+import Portrait from '@/components/Portrait';
 
 export default function AboutPage() {
   return (
     <div className="max-w-4xl mx-auto space-y-12">
-      <section>
-        {/* <h1 className="text-4xl font-bold mb-4">Hi, I&apos;m Meng Han</h1> */}
-        <h1 className="text-4xl font-bold mb-4">
-          Hi, I&apos;m Meng Han <span className="inline-block animate-wave">👋</span>
-        </h1>
-        <p className="text-xl text-slate-600 dark:text-slate-400 mb-6">
-          Aspiring AI/ML Engineer passionate about building intelligent systems that solve real-world problems
-        </p>
-        <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-          I&apos;m currently pursuing a Master of Science in Data Science and Machine Learning at the National University of Singapore, 
-          where I&apos;m deep-diving into the fascinating world of Big Data and Machine Learning Algorithms. With a background in 
-          Computer Engineering and hands-on experience across machine learning, computer vision, and AI systems, I love turning 
-          complex problems into elegant solutions.
+      <section className="grid grid-cols-1 md:grid-cols-[1fr_auto] items-start gap-8 md:gap-10">
+        {/* Text Content */}
+        <div className="md:order-first">
+          <h1 className="text-4xl font-bold mb-2">
+            Hi, I&apos;m Meng Han{' '}
+            <span className="inline-block animate-wave">👋</span>
+          </h1>
+          <p className="text-xl text-slate-600 dark:text-slate-400 mb-4">
+            Aspiring AI/ML Engineer based in Singapore 🇸🇬.
+          </p>
 
-          <br></br>
-          <br></br>
+          {/* Open to Work Box */}
+          <section className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 border border-blue-200 dark:border-blue-800 mb-6">
+            <h2 className="text-xl font-semibold mb-2">Open to Work & Collaboration</h2>
+            <p className="text-slate-700 dark:text-slate-300">
+              I’m actively seeking opportunities in AI/ML engineering and welcome collaborations on VLMs, LLMs, computer vision, or real-world ML applications.
+            </p>
+          </section>
 
-          Outside of tech, I deeply enjoy cycling, photography, anime, gaming and exploring new parts of the world!
-        </p>
+          <CTABar />
+        </div>
+
+        {/* Portrait */}
+        <div className="md:order-last">
+          <Portrait />
+        </div>
       </section>
 
       <section>
@@ -33,7 +42,7 @@ export default function AboutPage() {
           <div className="border-l-4 border-blue-600 dark:border-blue-400 pl-4">
             <h3 className="font-semibold text-lg">Master of Science in Data Science & Machine Learning</h3>
             <p className="text-slate-600 dark:text-slate-400">National University of Singapore</p>
-            <p className="text-sm text-slate-500 dark:text-slate-500">July 2025 - Present</p>
+            <p className="text-sm text-slate-500 dark:text-slate-500">August 2025 - Present</p>
             <p className="mt-2 text-slate-700 dark:text-slate-300">
               Relevant Coursework: Scalable Distributed Computing for Data Science, Data Science in Quantitative Finance
             </p>
@@ -43,7 +52,7 @@ export default function AboutPage() {
             <p className="text-slate-600 dark:text-slate-400">National University of Singapore</p>
             <p className="text-sm text-slate-500 dark:text-slate-500">August 2022 - July 2025</p>
             <p className="mt-2 text-slate-700 dark:text-slate-300">
-              First Class Honours | GPA: 4.51/5.00 | Engineering Scholarship Programme
+              First Class Honours | Engineering Scholarship Programme | LifeHack'23 Project Director
             </p>
           </div>
 
@@ -56,30 +65,6 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-      </section>
-
-      <section>
-        <div className="flex items-center gap-2 mb-6">
-          <Briefcase className="text-blue-600 dark:text-blue-400" />
-          <h2 className="text-2xl font-bold">What I&apos;m Working On</h2>
-        </div>
-        <p className="text-slate-700 dark:text-slate-300 mb-4">
-          Currently exploring the frontiers of AI through my graduate studies and personal ventures, with a particular focus on:
-        </p>
-        <ul className="space-y-2 text-slate-700 dark:text-slate-300">
-          <li className="flex gap-2">
-            <span className="text-blue-600 dark:text-blue-400">→</span>
-            <span>Operating small local LLMs - RAG, fine-tuning, quantisation to optimise performance on limited compute</span>
-          </li>
-          <li className="flex gap-2">
-            <span className="text-blue-600 dark:text-blue-400">→</span>
-            <span>Diffusion Models and their applications in generative AI (Stable Diffusion, LoRAs, Pose Estimation and VideoGen)</span>
-          </li>
-          <li className="flex gap-2">
-            <span className="text-blue-600 dark:text-blue-400">→</span>
-            <span>Scalable ML systems and distributed computing for data science using Apache Spark on GCP Dataproc</span>
-          </li>
-        </ul>
       </section>
 
       <section>
@@ -167,27 +152,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* <section>
-        <div className="flex items-center gap-2 mb-6">
-          <Heart className="text-blue-600 dark:text-blue-400" />
-          <h2 className="text-2xl font-bold">Interests</h2>
-        </div>
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
-            <h3 className="font-semibold mb-2">Technical</h3>
-            <p className="text-sm text-slate-700 dark:text-slate-300">
-              Deep learning architectures, LLMs, diffusion models, computer vision, and AI safety
-            </p>
-          </div>
-          <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
-            <h3 className="font-semibold mb-2">Beyond Code</h3>
-            <p className="text-sm text-slate-700 dark:text-slate-300">
-              Cycling, photography, anime, gaming and exploring new parts of the world!
-            </p>
-          </div>
-        </div>
-      </section> */}
 
       <section>
         <div className="flex items-center gap-2 mb-6">
