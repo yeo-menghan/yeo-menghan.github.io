@@ -3,24 +3,22 @@
 
 import { useState } from 'react';
 
-export interface ExperienceEntry {
+interface TimelineEntry {
   id: string;
-  company: string;
-  role: string;
   period: string;
   bullets: string[];
   logoUrl?: string;
   projectBadges?: string[];
 }
 
-export interface EducationEntry {
-  id: string;
+export interface ExperienceEntry extends TimelineEntry {
+  company: string;
+  role: string;
+}
+
+export interface EducationEntry extends TimelineEntry {
   school: string;
   degree: string;
-  period: string;
-  bullets: string[];
-  logoUrl?: string;
-  projectBadges?: string[];
 }
 
 interface TimelineTabsProps {
@@ -31,10 +29,14 @@ interface TimelineTabsProps {
 export default function TimelineTabs({ experiences, educations }: TimelineTabsProps) {
   const [activeTab, setActiveTab] = useState<'work' | 'education'>('work');
 
-  const renderEntry = (entry: any, isEducation = false) => {
+  const renderEntry = (entry: TimelineEntry, isEducation = false) => {
     const { id, logoUrl, period, bullets, projectBadges } = entry;
-    const title = isEducation ? entry.school : entry.company;
-    const subtitle = isEducation ? entry.degree : entry.role;
+    const title = isEducation 
+      ? (entry as EducationEntry).school 
+      : (entry as ExperienceEntry).company;
+    const subtitle = isEducation 
+      ? (entry as EducationEntry).degree 
+      : (entry as ExperienceEntry).role;
 
     return (
       <div key={id} className="flex gap-4 py-6 last:pb-0">
