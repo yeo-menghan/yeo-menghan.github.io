@@ -6,6 +6,7 @@ import Navigation from "@/components/Navigation";
 import Chatbot from "@/components/Chatbot";
 import StructuredData from "@/components/StructuredData";
 import { Analytics } from "@vercel/analytics/next"; 
+import FooterCTA from "@/components/FooterCTA";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -102,6 +103,7 @@ export default function RootLayout({
               <main className="py-8">
                 {children}
               </main>
+              <FooterCTA />
               <Chatbot />
             </div>
           </div>

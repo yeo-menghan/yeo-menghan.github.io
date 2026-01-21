@@ -66,7 +66,7 @@ export default function ContactPage() {
       </div>
     
       <a
-        href="/yeo-menghan-resume.pdf"
+        href="/yeo_menghan_resume.pdf"
         download
         className="flex items-start gap-4 p-6 mb-12 border border-slate-200 dark:border-slate-700 rounded-lg hover:shadow-lg transition-all hover:border-blue-500 group"
       >
