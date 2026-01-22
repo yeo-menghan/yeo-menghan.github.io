@@ -18,6 +18,11 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
         rehypePlugins={[rehypeRaw, rehypeKatex]}
         components={{
           mark: ({ children }) => <mark>{children}</mark>,
+          blockquote: ({ children }) => (
+            <blockquote className="border-l-4 border-slate-300 pl-4 italic text-slate-600 dark:border-slate-600 dark:text-slate-400 my-4">
+              {children}
+            </blockquote>
+          ),
         }}
       >
         {content}

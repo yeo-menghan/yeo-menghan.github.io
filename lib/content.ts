@@ -40,7 +40,7 @@ export interface Opinion extends ContentItem {
 }
 
 export interface Note extends ContentItem {
-  category: string; // Required for notes
+  category: string;
   paper?: {
     title: string;
     authors: string;
@@ -69,7 +69,7 @@ export function getContentByType(type: ContentType): ContentItem[] {
         slug: file.replace('.md', ''),
         title: data.title || '',
         date: data.date || '',
-        updatedDate: data.updatedDate ?? data.date, // 👈 IMPORTANT
+        updatedDate: data.updatedDate ?? data.date,
         content,
         description: data.description,
         excerpt: data.excerpt,
