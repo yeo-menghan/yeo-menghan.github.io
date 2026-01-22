@@ -46,7 +46,7 @@ export default function CTABar() {
           <Github size={20} />
         </Link>
         <Link
-          href="mailto:yeomenghan1989@gmail.com"
+          href="mailto:yeo_menghan@u.nus.edu"
           className="p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 
             hover:text-slate-900 dark:hover:text-white transition-colors"
           aria-label="Email"

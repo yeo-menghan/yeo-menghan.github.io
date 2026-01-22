@@ -12,7 +12,7 @@ export default function ContactPage() {
 
       <div className="grid md:grid-cols-2 gap-8 mb-12">
         <a
-          href="mailto:yeomenghan1989@gmail.com"
+          href="mailto:yeo_menghan@u.nus.edu"
           className="flex items-start gap-4 p-6 border border-slate-200 dark:border-slate-700 rounded-lg hover:shadow-lg dark:hover:shadow-slate-800/50 transition-all hover:border-blue-500 dark:hover:border-blue-500 group"
         >
           <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 transition-colors">
@@ -20,7 +20,7 @@ export default function ContactPage() {
           </div>
           <div>
             <h3 className="font-semibold mb-1">Email</h3>
-            <p className="text-slate-600 dark:text-slate-400 text-sm">yeomenghan1989@gmail.com</p>
+            <p className="text-slate-600 dark:text-slate-400 text-sm">yeo_menghan@u.nus.edu</p>
           </div>
         </a>
 

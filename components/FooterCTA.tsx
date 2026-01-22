@@ -33,7 +33,7 @@ export default function FooterCTA() {
             <Github size={20} />
           </Link>
           <Link
-            href="mailto:yeomenghan1989@gmail.com"
+            href="mailto:yeo_menghan@u.nus.edu"
             className="text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
             aria-label="Email"
           >
