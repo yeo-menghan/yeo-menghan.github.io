@@ -33,23 +33,23 @@ export default function ProjectsClient({ projects, allTags }: { projects: Projec
     <div className="max-w-4xl mx-auto">
       <div className="mb-8">
         <h1 className="text-4xl font-bold mb-4">Projects</h1>
-        <p className="text-xl text-slate-600 dark:text-slate-400">
+        <p className="text-xl text-slate-600">
           A collection of my work in AI, machine learning, and computer vision
         </p>
       </div>
 
       <div className="flex flex-wrap gap-4 mb-8 items-center">
         <div className="flex items-center gap-2">
-          <Filter size={20} className="text-slate-600 dark:text-slate-400" />
+          <Filter size={20} className="text-slate-600" />
           <span className="text-sm font-medium">Filter:</span>
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 max-h-20 overflow-y-auto pr-1">
           <button
             onClick={() => setSelectedTag('All')}
             className={`px-4 py-2 rounded-lg text-sm transition-colors ${
               selectedTag === 'All'
                 ? 'bg-blue-600 text-white'
-                : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
             }`}
           >
             All
@@ -61,7 +61,7 @@ export default function ProjectsClient({ projects, allTags }: { projects: Projec
               className={`px-4 py-2 rounded-lg text-sm transition-colors ${
                 selectedTag === tag
                   ? 'bg-blue-600 text-white'
-                  : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
               }`}
             >
               {tag}
@@ -72,7 +72,7 @@ export default function ProjectsClient({ projects, allTags }: { projects: Projec
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as 'date' | 'title')}
-            className="px-4 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm border-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-4 py-2 rounded-lg bg-slate-100 text-slate-700 text-sm border-none focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value="date">Sort by Date</option>
             <option value="title">Sort by Title</option>
@@ -97,7 +97,7 @@ export default function ProjectsClient({ projects, allTags }: { projects: Projec
 
       {sortedProjects.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-slate-600 dark:text-slate-400">
+          <p className="text-slate-600">
             No projects found with the selected filters.
           </p>
         </div>

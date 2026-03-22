@@ -22,7 +22,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
     <div className="max-w-4xl mx-auto">
       <Link
         href="/projects"
-        className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline mb-8"
+        className="inline-flex items-center gap-2 text-blue-600 hover:underline mb-8"
       >
         <ArrowLeft size={20} />
         Back to Projects
@@ -32,7 +32,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
         <header className="mb-8">
           <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
 
-          <div className="flex flex-wrap items-center gap-4 text-slate-600 dark:text-slate-400 mb-4">
+          <div className="flex flex-wrap items-center gap-4 text-slate-600 mb-4">
             <div className="flex items-center gap-2">
               <Calendar size={18} />
               <span>{project.date}</span>
@@ -43,7 +43,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline"
+                className="flex items-center gap-2 text-blue-600 hover:underline"
               >
                 <ExternalLink size={18} />
                 View on GitHub
@@ -55,7 +55,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline"
+                className="flex items-center gap-2 text-blue-600 hover:underline"
               >
                 <ExternalLink size={18} />
                 View Project
@@ -67,7 +67,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
             {project.tags?.map((tag: string) => (
               <span
                 key={tag}
-                className="inline-flex items-center gap-1 px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm"
+                className="inline-flex items-center gap-1 px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm"
               >
                 <Tag size={14} />
                 {tag}

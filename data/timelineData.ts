@@ -2,10 +2,21 @@
 
 export const experiences = [
   {
+    id: 'avetics',
+    company: 'Avetics Global',
+    role: 'Computer Vision Engineer',
+    period: 'Feb 2026 – Present',
+    bullets: [
+      'Engineering low-latency vision pipelines for drones on constrained edge hardware.'
+    ],
+    logoUrl: 'avetics_global_logo.jpeg',
+    projectBadges: []
+  },
+  {
     id: 'nus-audit',
     company: 'NUS Office of Internal Audit',
     role: 'AI Engineer Intern',
-    period: 'Sep 2025 – Present',
+    period: 'Sep 2025 – Feb 2026',
     bullets: [
       'Built an end-to-end fraud detection system for vendor invoices using OCR, PDF forensics, and document similarity - cut manual audit time by ~30%.',
       'Designed an explainable unsupervised anomaly detector (Isolation Forest + SHAP) to flag suspicious claims without labeled fraud data.'
@@ -50,6 +61,18 @@ export const experiences = [
     ],
     logoUrl: 'rockship.png',
     projectBadges: []
+  },
+  {
+    id: 'dsta',
+    company: 'DSTA (Defence Science and Technology Agency) Land Systems',
+    role: 'Robotics Engineer Intern',
+    period: 'May 2023 – July 2023',
+    bullets: [
+      'Implemented State of the Arts Visual SLAM algorithm RTAB-Map to enable simultaneous mapping and localisation on DJI Robomaster platform for reconnaissance missions.',
+      'Developed a framework to efficiently force-multiply robots by linking them to a central platform using communication protocols such as ROS and MQTT.'
+    ],
+    logoUrl: 'dsta.jpg',
+    projectBadges: []
   }
 ];
 
@@ -76,6 +99,15 @@ export const educations = [
       'Project Director, LifeHack’23 | Photographer & Videographer, Freshmen Orientation 2023'
     ],
     logoUrl: 'nus-logo.jpg',
+    projectBadges: []
+  },
+  {
+    id: 'sep-cuhk',
+    school: 'The Chinese University of Hong Kong',
+    degree: 'NUS Student Exchange Programme',
+    period: 'Aug 2024 – Dec 2024',
+    bullets: [ ],
+    logoUrl: 'cuhk.png',
     projectBadges: []
   },
   {

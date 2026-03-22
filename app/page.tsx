@@ -14,15 +14,15 @@ export default function AboutPage() {
             Hi, I&apos;m Meng Han{' '}
             <span className="inline-block animate-wave">👋</span>
           </h1>
-          <p className="text-xl text-slate-600 dark:text-slate-400 mb-4">
-            Aspiring AI/ML Engineer based in Singapore 🇸🇬.
+          <p className="text-xl text-slate-600 mb-4">
+            Computer Vision Engineer based in Singapore 🇸🇬.
           </p>
 
           {/* Open to Work Box */}
-          <section className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 border border-blue-200 dark:border-blue-800 mb-6">
-            <h2 className="text-xl font-semibold mb-2">Open to Work & Collaboration!</h2>
-            <p className="text-slate-700 dark:text-slate-300">
-              I&apos;m actively seeking opportunities in AI/ML engineering and welcome collaborations on VLMs, LLMs, or real-world ML applications. Expecting to grad in Dec 2026.
+          <section className="bg-blue-50 rounded-lg p-6 border border-blue-200 mb-6">
+            <h2 className="text-xl font-semibold mb-2">Open to Collaboration!</h2>
+            <p className="text-slate-700">
+              I&apos;m actively learning edge AI and electronics, and am open to projects, collaborations, or just chatting about AI and technology. Feel free to reach out!
             </p>
           </section>
 

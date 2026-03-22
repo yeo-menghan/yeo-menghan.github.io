@@ -7,11 +7,6 @@
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
   }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-  }
 }
 
 /* KaTeX styles for math rendering */
@@ -19,19 +14,19 @@
 
 /* Markdown styles */
 .prose {
-  @apply text-slate-700 dark:text-slate-300;
+  @apply text-slate-700;
 }
 
 .prose h1 {
-  @apply text-3xl font-bold mt-8 mb-4 text-slate-900 dark:text-white;
+  @apply text-3xl font-bold mt-8 mb-4 text-slate-900;
 }
 
 .prose h2 {
-  @apply text-2xl font-bold mt-6 mb-3 text-slate-900 dark:text-white;
+  @apply text-2xl font-bold mt-6 mb-3 text-slate-900;
 }
 
 .prose h3 {
-  @apply text-xl font-semibold mt-4 mb-2 text-slate-900 dark:text-white;
+  @apply text-xl font-semibold mt-4 mb-2 text-slate-900;
 }
 
 .prose p {
@@ -40,11 +35,11 @@
 
 /* Inline code only */
 .prose :not(pre) > code {
-  @apply bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm;
+  @apply bg-slate-100 px-1.5 py-0.5 rounded text-sm;
 }
 
 .prose pre {
-  @apply bg-slate-100 dark:bg-slate-800 p-4 rounded-lg overflow-x-auto mb-4;
+  @apply bg-slate-100 p-4 rounded-lg overflow-x-auto mb-4;
 }
 
 /* Top-level lists */
@@ -67,7 +62,7 @@
   list-style-type: square;
 }
 .prose a {
-  @apply text-blue-600 dark:text-blue-400 hover:underline;
+  @apply text-blue-600 hover:underline;
 }
 
 @layer utilities {
@@ -109,10 +104,6 @@
   list-style-type: none;
 }
 
-.dark .prose input[type="checkbox"] {
-  accent-color: #60a5fa;
-}
-
 html {
   scrollbar-gutter: stable;
 }
@@ -124,10 +115,6 @@ body {
 
 .prose mark {
   @apply rounded bg-yellow-200;
-}
-
-.dark .prose mark {
-  @apply rounded bg-yellow-500;
 }
 
 /* Center images inside markdown prose */

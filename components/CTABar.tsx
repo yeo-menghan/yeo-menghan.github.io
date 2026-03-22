@@ -12,11 +12,11 @@ export default function CTABar() {
         download
         className="group flex items-center gap-2 px-3 py-2 rounded-lg transition-colors duration-200
           text-slate-700 hover:text-slate-900 
-          dark:text-slate-300 dark:hover:text-white
+         
           hover:bg-slate-200 
-          dark:hover:bg-slate-700
+         
           border border-transparent hover:border-slate-300 
-          dark:hover:border-slate-600
+         
           whitespace-nowrap"
       >
         Resume
@@ -24,13 +24,13 @@ export default function CTABar() {
       </Link>
 
       {/* Social Icons */}
-      <div className="flex items-center gap-4 text-slate-500 dark:text-slate-400">
+      <div className="flex items-center gap-4 text-slate-500">
         <Link
           href="https://linkedin.com/in/yeo-meng-han"
           target="_blank"
           rel="noopener noreferrer"
-          className="p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 
-            hover:text-slate-900 dark:hover:text-white transition-colors"
+          className="p-2 rounded-lg hover:bg-slate-200 
+            hover:text-slate-900 transition-colors"
           aria-label="LinkedIn"
         >
           <Linkedin size={20} />
@@ -39,16 +39,16 @@ export default function CTABar() {
           href="https://github.com/yeo-menghan"
           target="_blank"
           rel="noopener noreferrer"
-          className="p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 
-            hover:text-slate-900 dark:hover:text-white transition-colors"
+          className="p-2 rounded-lg hover:bg-slate-200 
+            hover:text-slate-900 transition-colors"
           aria-label="GitHub"
         >
           <Github size={20} />
         </Link>
         <Link
-          href="mailto:yeo_menghan@u.nus.edu"
-          className="p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 
-            hover:text-slate-900 dark:hover:text-white transition-colors"
+          href="mailto:yeomenghan1989@gmail.com"
+          className="p-2 rounded-lg hover:bg-slate-200 
+            hover:text-slate-900 transition-colors"
           aria-label="Email"
         >
           <Mail size={20} />

@@ -2,7 +2,7 @@
 export default function Portrait() {
   return (
     <div className="flex justify-center md:justify-start">
-      <div className="w-full max-w-[200px] overflow-hidden rounded-xl border-2 border-slate-200 dark:border-slate-700 shadow-sm">
+      <div className="w-full max-w-[200px] overflow-hidden rounded-xl border-2 border-slate-200 shadow-sm">
         <img
           src="/yeo-menghan.jpg"
           alt="Meng Han"

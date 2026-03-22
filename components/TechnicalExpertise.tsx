@@ -43,10 +43,10 @@ const TechnicalExpertise: React.FC = () => {
         {skillCategories.map((category, index) => (
           <div
             key={index}
-            className="bg-slate-100 dark:bg-slate-800 rounded-xl p-5"
+            className="bg-slate-100 rounded-xl p-5"
           >
             <h3 className="font-semibold mb-2">{category.title}</h3>
-            <ul className="text-sm text-slate-700 dark:text-slate-300 list-disc list-inside space-y-1">
+            <ul className="text-sm text-slate-700 list-disc list-inside space-y-1">
               {category.items.map((item, itemIndex) => (
                 <li key={itemIndex}>{item}</li>
               ))}

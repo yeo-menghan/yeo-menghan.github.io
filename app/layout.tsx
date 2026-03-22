@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import ThemeProvider from "@/components/ThemeProvider";
 import Navigation from "@/components/Navigation";
-import Chatbot from "@/components/Chatbot";
 import StructuredData from "@/components/StructuredData";
 import { Analytics } from "@vercel/analytics/next"; 
 import FooterCTA from "@/components/FooterCTA";
@@ -89,25 +87,15 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body className={inter.className}>
-        <ThemeProvider>
-          {/* <div className="min-h-screen bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors">
+        <div className="min-h-screen bg-white text-slate-900 transition-colors">
+          <div className="container mx-auto px-4 max-w-3xl">
             <Navigation />
-            <main className="container mx-auto px-4 py-8 max-w-6xl">
+            <main className="py-8">
               {children}
             </main>
-            <Chatbot />
-          </div> */}
-          <div className="min-h-screen bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors">
-            <div className="container mx-auto px-4 max-w-3xl">
-              <Navigation />
-              <main className="py-8">
-                {children}
-              </main>
-              <FooterCTA />
-              <Chatbot />
-            </div>
+            <FooterCTA />
           </div>
-        </ThemeProvider>
+        </div>
         <Analytics />
       </body>
     </html>
