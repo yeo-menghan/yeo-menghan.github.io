@@ -9,8 +9,7 @@ export const experiences = [
     bullets: [
       'Engineering low-latency vision pipelines for drones on constrained edge hardware.'
     ],
-    logoUrl: 'avetics_global_logo.jpeg',
-    projectBadges: []
+    logoUrl: '/avetics_global_logo.jpeg'
   },
   {
     id: 'nus-audit',
@@ -21,8 +20,7 @@ export const experiences = [
       'Built an end-to-end fraud detection system for vendor invoices using OCR, PDF forensics, and document similarity - cut manual audit time by ~30%.',
       'Designed an explainable unsupervised anomaly detector (Isolation Forest + SHAP) to flag suspicious claims without labeled fraud data.'
     ],
-    logoUrl: 'nus_oia_logo.jpeg',
-    projectBadges: []
+    logoUrl: '/nus_oia_logo.jpeg'
   },
   {
     id: 'changi-airport',
@@ -34,8 +32,7 @@ export const experiences = [
       'Automated flight turnaround analysis across 18k+ records to identify ground-crew bottlenecks and reduce departure delays',
       'Slashed monthly data pipeline runtime from 12h to 8.5h via a SageMaker-based ETL system with enhanced logging.'
     ],
-    logoUrl: 'cag.png',
-    projectBadges: []
+    logoUrl: '/cag.png'
   },
   {
     id: 'cisco',
@@ -46,8 +43,7 @@ export const experiences = [
         'Built a real-time human detection and tracking system using YOLOv8 + DeepSORT on overhead fisheye video feeds, achieving 84% mAP at 15 FPS on a standard workstation.',
         'Developed a low-latency pipeline to convert calibrated video streams into standardised JSON bounding boxes, enabling near real-time motion analysis for digital-twin applications.'
     ],
-    logoUrl: 'cisco.jpeg',
-    projectBadges: []
+    logoUrl: '/cisco.jpeg'
   },
   {
     id: 'rockship',
@@ -59,8 +55,7 @@ export const experiences = [
       'Developed and deployed robust, scalable LlamaIndex RAG APIs for text and image embedding with built-in OCR safeguards, adopted as boilerplate by internal engineering team to accelerate prototype development',
       'Improved YOLOv8 nail detection mAP by 20pp via targeted labeling; integrated into an ARKit iOS app for sub-centimeter construction alignment',
     ],
-    logoUrl: 'rockship.png',
-    projectBadges: []
+    logoUrl: '/rockship.png'
   },
   {
     id: 'dsta',
@@ -71,8 +66,7 @@ export const experiences = [
       'Implemented State of the Arts Visual SLAM algorithm RTAB-Map to enable simultaneous mapping and localisation on DJI Robomaster platform for reconnaissance missions.',
       'Developed a framework to efficiently force-multiply robots by linking them to a central platform using communication protocols such as ROS and MQTT.'
     ],
-    logoUrl: 'dsta.jpg',
-    projectBadges: []
+    logoUrl: '/dsta.jpg'
   }
 ];
 
@@ -86,8 +80,7 @@ export const educations = [
       'Relevant Coursework: Scalable Distributed Computing, Deep Learning, Optimisation Algorithms, Cloud Computing',
       'Expected Graduation: December 2026'
     ],
-    logoUrl: 'nus-logo.jpg',
-    projectBadges: []
+    logoUrl: '/nus-logo.jpg'
   },
   {
     id: 'nus-beng',
@@ -98,8 +91,7 @@ export const educations = [
       'First Class Honours | Engineering Scholarship Programme',
       'Project Director, LifeHack’23 | Photographer & Videographer, Freshmen Orientation 2023'
     ],
-    logoUrl: 'nus-logo.jpg',
-    projectBadges: []
+    logoUrl: '/nus-logo.jpg'
   },
   {
     id: 'sep-cuhk',
@@ -107,8 +99,7 @@ export const educations = [
     degree: 'NUS Student Exchange Programme',
     period: 'Aug 2024 – Dec 2024',
     bullets: [ ],
-    logoUrl: 'cuhk.png',
-    projectBadges: []
+    logoUrl: '/cuhk.png'
   },
   {
     id: 'jc',
@@ -118,7 +109,6 @@ export const educations = [
     bullets: [
       'Infocomm Club (Robotics) | Students’ Council | Volunteering',
     ],
-    logoUrl: 'hc.jpeg',
-    projectBadges: []
+    logoUrl: '/hc.jpeg'
   }
 ];

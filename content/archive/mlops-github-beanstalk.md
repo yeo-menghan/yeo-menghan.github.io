@@ -11,7 +11,7 @@ I will be combining 2 tutorials to utilise both Github Actions and AWS Beanstalk
 
 ## Project Code
 
-For the full breakdown, please refer to the Projects page: [End-to-end ML Deployment](http://yeo-menghan.com/projects/e2e-ml-deployment).
+For the full breakdown, please refer to the Projects page: [End-to-end ML Deployment](./e2e-ml-deployment.md).
 
 All full code snippets will be documented within the projects page.
 

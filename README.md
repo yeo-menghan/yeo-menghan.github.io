@@ -1,53 +1,37 @@
 # Meng Han's personal website
 
-## Prerequisites
+Personal portfolio built with Next.js 14, React, TypeScript, and Tailwind CSS.
 
-Before starting, ensure you have the following installed on your system:
+## Development
 
-1. **Node.js** (version 14.x or higher) - [Download Node.js](https://nodejs.org/)
-2. **Yarn** - [Install Yarn](https://yarnpkg.com/getting-started/install)
+Use Node.js 20 or newer and npm. `package-lock.json` is the dependency lockfile used locally and in CI.
 
-## Quick Start
-
-```bash
-# clone the repository
-$ git clone https://github.com/yeo-menghan/yeo-menghan.github.io.git
-
-# navigate to the repository
-$ cd yeo-menghan.github.io
-
-# install dependencies
-$ yarn install
-
-# start development server
+```sh
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-
-# Build & Run in production:
-npx next build
-
-npx next start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-## Learn More
+## Checks and production build
 
-To learn more about Next.js, take a look at the following resources:
+```sh
+npm run lint
+npm run typecheck
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+GitHub Pages uses `NEXT_OUTPUT_EXPORT=true npm run build` to generate `out/`.
+The default build supports Vercel and `npm start`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Content and assets
 
-## Technologies used
+- `app/`: routes, layouts, and page components.
+- `components/`: shared UI components.
+- `data/timelineData.ts`: work and education history.
+- `content/projects/`, `content/notes/`, `content/opinions/`: published Markdown articles; filenames become URL slugs.
+- `content/archive/`: unpublished writing retained for reference, with its referenced images preserved.
+- `public/`: referenced images, the downloadable resume, favicon, and Google site verification file. The verification file is consumed externally even though no component links to it.
 
-![](https://skillicons.dev/icons?i=nextjs,tailwind,ts,github,githubactions,yarn)
-
-## Roadmap
-- [ ] Use LangChain - LangFuse for LLM telemetry (token tracking, input-output etc.)
+Markdown supports GitHub-style tables and task lists, KaTeX math, and raw HTML. Only trusted, locally authored Markdown should be added because raw HTML is rendered.

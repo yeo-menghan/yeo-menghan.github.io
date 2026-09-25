@@ -1,28 +1,21 @@
-'use client';
-
 import { Download, Linkedin, Github, Mail } from 'lucide-react';
 import Link from 'next/link';
 
 export default function CTABar() {
   return (
     <div className="flex flex-row flex-wrap items-center gap-4">
-      {/* Resume Button — thematically aligned */}
-      <Link
+      <a
         href="/yeo_menghan_resume.pdf"
         download
         className="group flex items-center gap-2 px-3 py-2 rounded-lg transition-colors duration-200
           text-slate-700 hover:text-slate-900 
-         
           hover:bg-slate-200 
-         
           border border-transparent hover:border-slate-300 
-         
           whitespace-nowrap"
       >
         Resume
         <Download size={16} className="opacity-70 group-hover:opacity-100 transition-opacity" />
-      </Link>
-
+      </a>
       {/* Social Icons */}
       <div className="flex items-center gap-4 text-slate-500">
         <Link

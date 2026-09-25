@@ -1,6 +1,5 @@
-'use client';
-
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import rehypeRaw from 'rehype-raw';
@@ -14,7 +13,8 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
   return (
     <div className="prose prose-slate max-w-none">
       <ReactMarkdown
-        remarkPlugins={[remarkMath]}
+        remarkPlugins={[remarkGfm, remarkMath]}
+        // Markdown is authored locally; raw HTML supports embedded markup such as <mark>.
         rehypePlugins={[rehypeRaw, rehypeKatex]}
         components={{
           mark: ({ children }) => <mark>{children}</mark>,

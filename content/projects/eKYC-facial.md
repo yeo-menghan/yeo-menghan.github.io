@@ -93,5 +93,5 @@ This gives us:
 - Edge deployment: Export to TensorFlow Lite for mobile SDKs.
 - Active liveness: Challenge-response (e.g., “turn your head left”).
 
-The full project is live at [https://project-spoof.yeo-menghan.com](https://project-spoof.yeo-menghan.com).
+The AWS-hosted demo has been retired to avoid recurring hosting costs.
 Code, Docker setup, and training notebooks are on [GitHub](https://github.com/yeo-menghan/eKYC-facial).

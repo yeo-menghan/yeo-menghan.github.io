@@ -1,5 +1,3 @@
-'use client';
-
 import { Linkedin, Github, Mail } from 'lucide-react';
 import Link from 'next/link';
 

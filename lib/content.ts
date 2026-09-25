@@ -34,11 +34,6 @@ export interface Project extends ContentItem {
   link?: string;
 }
 
-export interface Opinion extends ContentItem {
-  excerpt: string;
-  readTime: string;
-}
-
 export interface Note extends ContentItem {
   category: string;
   paper?: {
@@ -50,7 +45,7 @@ export interface Note extends ContentItem {
 }
 
 export function getContentByType(type: ContentType): ContentItem[] {
-  const dirPath = path.join(process.cwd(), 'content', type);
+  const dirPath = path.join(contentDirectory, type);
   
   if (!fs.existsSync(dirPath)) {
     return [];
@@ -64,7 +59,6 @@ export function getContentByType(type: ContentType): ContentItem[] {
       const fileContent = fs.readFileSync(filePath, 'utf-8');
       const { data, content } = matter(fileContent);
       
-      // Build the base item
       const item: ContentItem = {
         slug: file.replace('.md', ''),
         title: data.title || '',
@@ -80,7 +74,6 @@ export function getContentByType(type: ContentType): ContentItem[] {
         category: data.category,
         paper: data.paper,
       };
-
 
       // Validate required fields based on type
       if (type === 'projects' && !data.description) {
@@ -128,83 +121,4 @@ export function getAllTags(type: ContentType): string[] {
   });
 
   return Array.from(tags).sort();
-}
-
-export function getAllCategories(type: 'notes'): string[] {
-  const items = getContentByType(type);
-  const categories = new Set<string>();
-  
-  items.forEach(item => {
-    if (item.category) {
-      categories.add(item.category);
-    }
-  });
-
-  return Array.from(categories).sort();
-}
-
-export function getWebsiteContent(): string {
-  const projects = getContentByType('projects');
-  const opinions = getContentByType('opinions');
-  const notes = getContentByType('notes');
-
-  const aboutContent = `
-About Yeo Meng Han:
-- Currently pursuing Master of Science in Data Science and Machine Learning at NUS
-- Bachelor of Engineering in Computer Engineering from NUS (First Class Honours, GPA 4.51/5.00)
-- Engineering Scholarship Programme recipient
-- Based in Singapore
-- Email: yeomenghan1989@gmail.com
-
-Work Experience:
-1. Changi Airport Group - Machine Learning Engineer Intern (May-Aug 2025)
-2. NUS Accelerated Digital Economy Lab - Computer Vision Research Assistant (Jan-May 2025)
-3. Rockship (NUS Overseas College Vietnam) - AI & Computer Vision Engineer Intern (Jan-Jun 2024)
-4. DSTA - Robotics Engineer Intern (May-Jul 2023)
-
-Technical Skills:
-- Programming: Python, C, C++
-- Web: React.js, Next.js, Node.js, TypeScript
-- AI/ML: PyTorch, TensorFlow, OpenCV, LangChain, LlamaIndex, RAG, LoRA
-- Cloud: AWS, Google Cloud Platform
-- DevOps: Docker, GitHub Actions
-- Other: ROS, MQTT, Computer Networks
-
-Interests:
-- Deep learning and neural networks
-- Large Language Models and Diffusion Models
-- Computer Vision
-- AI applications in real-world problems
-  `;
-
-  const projectsContent = projects.map(p => `
-Project: ${p.title}
-Date: ${p.date}
-Tags: ${p.tags?.join(', ') || 'N/A'}
-Description: ${p.description}
-${p.content}
-  `).join('\n\n');
-
-  const opinionsContent = opinions.map(o => `
-Opinion Article: ${o.title}
-Date: ${o.date}
-${o.content}
-  `).join('\n\n');
-
-  const notesContent = notes.map(n => `
-Note: ${n.title}
-Category: ${n.category}
-Date: ${n.date}
-${n.content}
-  `).join('\n\n');
-
-  return `
-${aboutContent}
-
-${projectsContent}
-
-${opinionsContent}
-
-${notesContent}
-  `.trim();
 }

@@ -1,6 +1,6 @@
 import CTABar from '@/components/CTABar';
 import Portrait from '@/components/Portrait';
-import TimelineTabs, { ExperienceEntry, EducationEntry } from '@/components/TimelineTabs';
+import TimelineTabs from '@/components/TimelineTabs';
 import { experiences, educations } from '@/data/timelineData';
 import TechnicalExpertise from '@/components/TechnicalExpertise';
 
@@ -18,7 +18,7 @@ export default function AboutPage() {
             Computer Vision Engineer based in Singapore 🇸🇬.
           </p>
 
-          {/* Open to Work Box */}
+          {/* Collaboration invitation */}
           <section className="bg-blue-50 rounded-lg p-6 border border-blue-200 mb-6">
             <h2 className="text-xl font-semibold mb-2">Open to Collaboration!</h2>
             <p className="text-slate-700">

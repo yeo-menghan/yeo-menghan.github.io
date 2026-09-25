@@ -37,10 +37,6 @@ export default function NoteDetailPage({ params }: { params: { slug: string } })
               <FolderOpen size={18} />
               <span>{note.category}</span>
             </div>
-            {/* <div className="flex items-center gap-2">
-              <Calendar size={18} />
-              <span>{note.date}</span>
-            </div> */}
             <div className="flex items-center gap-2">
               <Calendar size={18} />
               <span>{note.date}</span>
