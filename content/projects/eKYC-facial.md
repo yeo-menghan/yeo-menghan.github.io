@@ -1,10 +1,23 @@
 ---
-title: "eKYC facial identify verification"
-description: "Exploring AWS deployment and facial detection model training"
+title: "eKYC facial liveness verification"
+description: "A facial liveness proof of concept: quality gates, ONNX inference and a reproducible AWS deployment."
 date: "2026-01-10"
 tags: ["Computer Vision", "AWS", "Github Actions", "Docker", "ONNX", "FastAPI"]
 github: "https://github.com/yeo-menghan/eKYC-facial"
 ---
+
+## At a glance
+
+**Personal proof of concept · deployed demo retired.** I designed the image-quality gate, trained the liveness classifier, and built the FastAPI serving and Docker deployment pipeline. This is a learning project, not a production identity-verification product.
+
+| Constraint | Decision |
+| --- | --- |
+| CPU-only serving | MobileNetV3-Small exported to ONNX |
+| Poor-quality uploads | Brightness, blur and face-size checks before inference |
+| Reproducible deployment | Git SHA image tags, ECR and EC2 |
+| Spoof resistance | Evaluate false accepts and false rejections separately |
+
+**Evidence:** the test results below come from the original project write-up. The 24.4% false-accept rate is a significant limitation. The public code and training notebooks are linked above; there is no live demo currently hosted.
 
 When I set out to build an **eKYC facial liveness verification pipeline**, I knew it wasn’t just about slapping a model on a server. Real-world identity verification systems must balance security, usability, and robustness- especially when deployed in regulated environments like fintech or government services. Here’s how I approached the problem, what worked, what didn’t, and where I’d go next.
 

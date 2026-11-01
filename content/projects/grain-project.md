@@ -5,6 +5,24 @@ date: "2025-10-28"
 tags: ["LLM", "Python", "Folium"]
 github: "https://github.com/yeo-menghan/grain-project"
 ---
+## At a glance
+
+**Take-home experiment.** I designed a multi-turn allocation pipeline and deterministic evaluator to explore driver–event scheduling. This is an investigation of LLM behaviour under constraints, not a deployed logistics service.
+
+## Architecture & decisions
+
+```text
+Rules + event context → LLM → JSON allocation
+                              ↓
+                    Deterministic evaluator
+                              ↓
+                    Error feedback → next round
+```
+
+The evaluator makes constraint violations explicit instead of relying on the model to judge its own answer. Comparing two model sizes explores cost versus solution quality. The write-up below records qualitative observations; no numerical benchmark or production result is claimed.
+
+**Demo & evidence:** implementation and experiment details are available in the linked GitHub README. A hosted demo, screenshots and a reproducible numerical comparison have not been included in this case study.
+
 ## Problem
 Allocating driver–event pairs in a logistics or scheduling context is a complex combinatorial optimization task. Traditional rule-based or heuristic approaches may lack flexibility or adaptability to dynamic constraints. To address this, I've designed a multi-turn LLM-based agent system that encodes allocation rules directly into the prompt context to iteratively get better allocation results.
 

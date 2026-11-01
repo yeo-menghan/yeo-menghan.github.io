@@ -1,18 +1,22 @@
 import { notFound } from 'next/navigation';
-import { getContentByType, getContentBySlug } from '@/lib/content';
-import MarkdownRenderer from '@/components/MarkdownRenderer';
+import { getContentByType, getContentBySlug, getArticleMetadata } from '@/lib/content';
+import ArticleBody from '@/components/ArticleBody';
 import { Calendar, Clock, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  return getArticleMetadata('opinions', params.slug);
+}
+
 export async function generateStaticParams() {
-  const opinions = getContentByType('opinions');
+  const opinions = await getContentByType('opinions');
   return opinions.map(opinion => ({
     slug: opinion.slug,
   }));
 }
 
-export default function OpinionDetailPage({ params }: { params: { slug: string } }) {
-  const opinion = getContentBySlug('opinions', params.slug);
+export default async function OpinionDetailPage({ params }: { params: { slug: string } }) {
+  const opinion = await getContentBySlug('opinions', params.slug);
 
   if (!opinion) {
     notFound();
@@ -45,7 +49,7 @@ export default function OpinionDetailPage({ params }: { params: { slug: string }
           </div>
         </header>
 
-        <MarkdownRenderer content={opinion.content} />
+        <ArticleBody content={opinion.content} body={opinion.body} />
       </article>
     </div>
   );

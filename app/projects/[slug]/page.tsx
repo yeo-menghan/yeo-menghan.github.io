@@ -1,18 +1,22 @@
 import { notFound } from 'next/navigation';
-import { getContentByType, getContentBySlug } from '@/lib/content';
-import MarkdownRenderer from '@/components/MarkdownRenderer';
+import { getContentByType, getContentBySlug, getArticleMetadata } from '@/lib/content';
+import ArticleBody from '@/components/ArticleBody';
 import { Calendar, Tag, ArrowLeft, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  return getArticleMetadata('projects', params.slug);
+}
+
 export async function generateStaticParams() {
-  const projects = getContentByType('projects');
+  const projects = await getContentByType('projects');
   return projects.map((project) => ({
     slug: project.slug,
   }));
 }
 
-export default function ProjectDetailPage({ params }: { params: { slug: string } }) {
-  const project = getContentBySlug('projects', params.slug);
+export default async function ProjectDetailPage({ params }: { params: { slug: string } }) {
+  const project = await getContentBySlug('projects', params.slug);
 
   if (!project) {
     notFound();
@@ -76,7 +80,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
           </div>
         </header>
 
-        <MarkdownRenderer content={project.content} />
+        <ArticleBody content={project.content} body={project.body} />
       </article>
     </div>
   );

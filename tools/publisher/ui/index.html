@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personal Publisher</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Publisher home"><span class="brand-icon" aria-hidden="true">▤</span><span>Publisher<small>YOUR LOCAL WRITING DESK</small></span></a>
+    <div class="connection"><span class="local-indicator">Local only</span><span id="branch-label">Checking branch…</span><button id="connect" class="button secondary">Connect GitHub</button></div>
+  </header>
+  <div id="notice" class="notice" role="status" hidden></div>
+  <main class="workspace">
+    <aside class="library" aria-label="Article library">
+      <div class="library-heading"><h1>Your library</h1><button id="new-article" class="button primary small">+ New</button></div>
+      <label class="sr-only" for="search">Search articles</label><input id="search" type="search" placeholder="Find an article…">
+      <label class="sr-only" for="collection-filter">Filter collection</label><select id="collection-filter"><option value="all">All collections</option><option value="notes">Notes</option><option value="opinions">Opinions</option><option value="projects">Projects</option></select>
+      <div id="article-list" class="article-list"></div>
+      <section class="history"><h2>Recent publications</h2><div id="publication-list"><p class="muted">Your published articles will appear here.</p></div></section>
+      <p class="library-footnote">Drafts live on this laptop.<br>Published content lives in GitHub.</p>
+    </aside>
+    <section id="welcome" class="welcome">
+      <span class="welcome-icon" aria-hidden="true">✎</span><p class="eyebrow">A LITTLE SPACE TO MAKE THINGS</p><h2>What’s on your mind?</h2><p>Pick an article from your library, or start something new.<br>Write at your own pace. Publish when it’s ready.</p><button id="welcome-new" class="button primary">Start writing</button><p class="welcome-note">Connect GitHub to load the latest articles from main.<br>You can write and save drafts offline.</p>
+    </section>
+    <section id="editor" class="editor" aria-label="Article editor" hidden>
+      <div class="editor-top"><div><p id="article-location" class="eyebrow"></p><span id="save-status" class="muted" role="status">Unsaved draft</span></div><div class="actions"><button id="load-main" class="button quiet">Load from main</button><button id="save" class="button secondary">Save draft</button><button id="review" class="button primary">Review & publish <span aria-hidden="true">↗</span></button></div></div>
+      <div class="metadata">
+        <label class="title-label" for="title">Title<input id="title" placeholder="Give your idea a title" maxlength="240"></label>
+        <div class="field-row"><label>Date<input id="date" type="date"></label><label>Updated<input id="updatedDate" type="date"></label><label>Tags<input id="tags" placeholder="Learning, Games, Life"></label></div>
+        <label id="category-field">Category<input id="category" placeholder="e.g. Learning notes"></label>
+        <label id="description-field">Description<input id="description" placeholder="A short description of the project"></label>
+        <div id="project-fields" class="field-row"><label>GitHub URL<input id="github" type="url" placeholder="https://github.com/…"></label><label>Project URL<input id="link" type="url" placeholder="https://…"></label></div>
+        <div id="opinion-fields" class="field-row"><label>Excerpt<input id="excerpt" placeholder="A short introduction"></label><label>Read time<input id="readTime" placeholder="5 min read"></label></div>
+        <details><summary>Additional metadata</summary><p class="muted">Fields such as paper details are preserved. Edit their JSON here if needed.</p><label class="sr-only" for="extra-metadata">Additional metadata JSON</label><textarea id="extra-metadata" rows="4" spellcheck="false">{}</textarea></details>
+      </div>
+      <div class="writing-area">
+        <div class="source-pane"><div class="pane-header"><span>MARKDOWN</span><div class="toolbar" aria-label="Formatting"><button type="button" data-format="heading" title="Heading">H2</button><button type="button" data-format="bold" title="Bold"><b>B</b></button><button type="button" data-format="italic" title="Italic"><i>I</i></button><button type="button" data-format="link" title="Insert link">Link</button><button id="upload" type="button">+ Image</button></div></div><label for="content" class="sr-only">Article Markdown</label><textarea id="content" placeholder="Start with a thought, a discovery, or something you’re making…" spellcheck="true"></textarea><input id="image-file" type="file" accept="image/png,image/jpeg,image/gif,image/webp" hidden><p class="editor-hint">Markdown, tables, code, and LaTeX math supported. Images up to 5 MB.</p></div>
+        <div class="preview-pane"><div class="pane-header"><span>ARTICLE PREVIEW</span><button id="refresh-preview" class="text-button">Refresh</button></div><iframe id="preview" title="Article preview" sandbox=""></iframe><p class="editor-hint">Preview uses the current website’s Markdown features. Scripts are disabled.</p></div>
+      </div>
+    </section>
+  </main>
+  <dialog id="new-dialog"><form id="new-form"><p class="eyebrow">SOMETHING NEW</p><h2>Start a draft</h2><label>Collection<select id="new-type"><option value="notes">Note</option><option value="opinions">Opinion</option><option value="projects">Project</option></select></label><label>Title<input id="new-title" required placeholder="What are you writing about?"></label><label>URL slug<input id="new-slug" required pattern="[a-zA-Z0-9][a-zA-Z0-9_-]{0,119}" placeholder="my-new-article"></label><p class="muted">Your slug becomes the article URL. This creates a local draft only.</p><div class="dialog-actions"><button type="button" id="cancel-new" class="button secondary">Cancel</button><button type="submit" class="button primary">Create draft</button></div></form></dialog>
+  <dialog id="review-dialog" class="review-dialog"><p class="eyebrow">READY WHEN YOU ARE</p><h2>Review your publication</h2><p id="review-target"></p><div id="review-files" class="review-files"></div><details><summary>Compare Markdown</summary><div class="comparison"><div><h3>Currently on main</h3><pre id="review-before"></pre></div><div><h3>This publication</h3><pre id="review-after"></pre></div></div></details><p class="muted">Publish creates one content-only commit on main. Vercel then builds the site. The publisher branch and other code changes stay separate.</p><div class="dialog-actions"><button id="cancel-review" class="button secondary">Keep writing</button><button id="publish" class="button primary">Publish to main</button></div><p id="publish-status" role="status"></p></dialog>
+</body>
+</html>

@@ -4,16 +4,17 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import StructuredData from "@/components/StructuredData";
 import { Analytics } from "@vercel/analytics/next"; 
+import PreviewBanner from "@/components/PreviewBanner";
 import FooterCTA from "@/components/FooterCTA";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: 'Yeo Meng Han - AI/ML Engineer',
+    default: 'Yeo Meng Han — Computer Vision Engineer',
     template: '%s | Yeo Meng Han'
   },
-  description: 'Portfolio of Yeo Meng Han, AI/ML Engineer specializing in RAG, LLMs, and Computer Vision',
+  description: 'Computer vision, edge AI and robotics. I build intelligent systems that connect software to the physical world.',
   keywords: [
     'Yeo Meng Han',
     'AI Engineer',
@@ -49,8 +50,8 @@ export const metadata: Metadata = {
     apple: '/chess.svg',
   },
   openGraph: {
-    title: 'Yeo Meng Han - AI/ML Engineer',
-    description: 'Portfolio of Yeo Meng Han, AI/ML Engineer specializing in RAG, LLMs, and Computer Vision',
+    title: 'Yeo Meng Han — Computer Vision Engineer',
+    description: 'Computer vision, edge AI and robotics. I build intelligent systems that connect software to the physical world.',
     url: 'https://yeo-menghan.com/',
     siteName: 'Yeo Meng Han Portfolio',
     images: [
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
         url: 'https://yeo-menghan.com/chess.svg', // Use absolute URL
         width: 1200,
         height: 630,
-        alt: 'Yeo Meng Han - AI/ML Engineer',
+        alt: 'Yeo Meng Han — Computer Vision Engineer',
       },
     ],
     locale: 'en_US',
@@ -66,8 +67,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Yeo Meng Han - AI/ML Engineer',
-    description: 'Portfolio of Yeo Meng Han, AI/ML Engineer specializing in RAG, LLMs, and Computer Vision',
+    title: 'Yeo Meng Han — Computer Vision Engineer',
+    description: 'Computer vision, edge AI and robotics. I build intelligent systems that connect software to the physical world.',
     images: ['https://yeo-menghan.com/chess.svg'],
   },
   metadataBase: new URL('https://yeo-menghan.com'),
@@ -87,14 +88,12 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body className={inter.className}>
-        <div className="min-h-screen bg-white text-slate-900 transition-colors">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <Navigation />
-            <main className="py-8">
-              {children}
-            </main>
-            <FooterCTA />
-          </div>
+        <a className="skip-link" href="#main-content">Skip to content</a>
+        <Navigation />
+        <div className="site-shell">
+          <PreviewBanner />
+          <main id="main-content" className="site-main">{children}</main>
+          <FooterCTA />
         </div>
         <Analytics />
       </body>

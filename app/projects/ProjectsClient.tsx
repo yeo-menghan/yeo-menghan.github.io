@@ -45,6 +45,7 @@ export default function ProjectsClient({ projects, allTags }: { projects: Projec
         </div>
         <div className="flex flex-wrap gap-2 max-h-20 overflow-y-auto pr-1">
           <button
+            aria-pressed={selectedTag === 'All'}
             onClick={() => setSelectedTag('All')}
             className={`px-4 py-2 rounded-lg text-sm transition-colors ${
               selectedTag === 'All'
@@ -57,6 +58,7 @@ export default function ProjectsClient({ projects, allTags }: { projects: Projec
           {allTags.map(tag => (
             <button
               key={tag}
+              aria-pressed={selectedTag === tag}
               onClick={() => setSelectedTag(tag)}
               className={`px-4 py-2 rounded-lg text-sm transition-colors ${
                 selectedTag === tag
@@ -70,6 +72,7 @@ export default function ProjectsClient({ projects, allTags }: { projects: Projec
         </div>
         <div className="ml-auto">
           <select
+            aria-label="Sort projects"
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as 'date' | 'title')}
             className="px-4 py-2 rounded-lg bg-slate-100 text-slate-700 text-sm border-none focus:outline-none focus:ring-2 focus:ring-blue-500"

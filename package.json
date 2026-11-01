@@ -7,12 +7,20 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "publisher": "node tools/publisher/server.mjs",
+    "test:publisher": "node --test tools/publisher/*.test.mjs",
+    "migrate:content": "node --env-file-if-exists=.env.local tools/migration/migrate.mjs",
+    "test:migration": "node --test tools/migration/*.test.mjs",
+    "studio": "npm --prefix studio run dev",
+    "studio:build": "npm --prefix studio run build"
   },
   "dependencies": {
+    "@portabletext/react": "^3.2.4",
+    "@sanity/webhook": "^4.0.4",
     "@vercel/analytics": "^1.6.1",
     "gray-matter": "^4.0.3",
-    "katex": "^0.16.10",
+    "katex": "0.16.47",
     "lucide-react": "^0.416.0",
     "next": "^14.2.23",
     "react": "^18",
@@ -21,12 +29,16 @@
     "rehype-katex": "^7.0.1",
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.1",
-    "remark-math": "^6.0.0"
+    "remark-math": "^6.0.0",
+    "remark-parse": "^11.0.0",
+    "three": "^0.187.0",
+    "unified": "^11.0.5"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/three": "^0.187.0",
     "eslint": "^8",
     "eslint-config-next": "^14.2.35",
     "postcss": "^8",

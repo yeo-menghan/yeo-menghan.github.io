@@ -1,10 +1,26 @@
 ---
 title: "IPPT Situp & Pushup Trainer"
-description: "ELISS-Like Push-Up & Sit-Up Counter"
+description: "A webcam-based training experiment using side-view pose estimation to count push-ups and sit-ups."
 date: "2026-01-01"
 tags: ["Computer Vision", "Pose Estimation", "Python", "JavaScript"]
 github: "https://github.com/yeo-menghan/ippt-trainer"
 ---
+
+## At a glance
+
+**Personal training experiment.** I built a side-view repetition counter around MediaPipe and OpenCV, with AI-assisted coding. My contribution was choosing the camera setup, integrating pose landmarks with angle and direction logic, and trying it during my own training.
+
+## Architecture & decisions
+
+```text
+Webcam → OpenCV frames → MediaPipe pose landmarks
+       → Joint angles → Motion direction + thresholds
+       → Repetition count + skeleton overlay
+```
+
+A laptop and webcam keep the setup accessible. The side-on camera placement follows the exercise viewpoint I wanted to practise, but introduces occlusion and positioning constraints. Push-up and sit-up modes use different joint angles and can be selected with P / S.
+
+**Demo status:** source and run instructions are available in the repository linked above. No recorded demo or formal counting benchmark is published here. The diagrams on the homepage are illustrations, not captured model output.
 
 ## Problem
 
@@ -33,3 +49,7 @@ The detector can count repetitions in real time with reasonable accuracy under g
 - The side-view placement may also require more positioning as opposed to the front-view before the user can begin proper training
 
 With only 2 weeks, I did pass with incentive, scoring only $200. Will train harder next year round to get that Gold!
+
+## Limitations & lessons
+
+I have not measured accuracy across a representative set of users, body types or camera positions. My personal IPPT result is an anecdote, not a validation of counting accuracy. A useful next step is to compare annotated video repetitions against the counter before making reliability claims.

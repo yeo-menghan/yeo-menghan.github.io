@@ -4,8 +4,8 @@ export default function StructuredData() {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Yeo Meng Han',
-    jobTitle: 'AI/ML Engineer',
-    description: 'AI/ML Engineer specializing in RAG, LLMs, and Computer Vision',
+    jobTitle: 'Computer Vision Engineer',
+    description: 'Computer Vision Engineer building intelligent systems that connect software to the physical world',
     url: 'https://yeo-menghan.com',
     sameAs: [
       'https://www.linkedin.com/in/yeo-meng-han/',
