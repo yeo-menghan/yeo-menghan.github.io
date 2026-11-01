@@ -1,18 +1,22 @@
 import { notFound } from 'next/navigation';
-import { getContentByType, getContentBySlug } from '@/lib/content';
-import MarkdownRenderer from '@/components/MarkdownRenderer';
+import { getContentByType, getContentBySlug, getArticleMetadata } from '@/lib/content';
+import ArticleBody from '@/components/ArticleBody';
 import { Calendar, FolderOpen, ArrowLeft, FileText, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  return getArticleMetadata('notes', params.slug);
+}
+
 export async function generateStaticParams() {
-  const notes = getContentByType('notes');
+  const notes = await getContentByType('notes');
   return notes.map(note => ({
     slug: note.slug,
   }));
 }
 
-export default function NoteDetailPage({ params }: { params: { slug: string } }) {
-  const note = getContentBySlug('notes', params.slug);
+export default async function NoteDetailPage({ params }: { params: { slug: string } }) {
+  const note = await getContentBySlug('notes', params.slug);
 
   if (!note) {
     notFound();
@@ -37,10 +41,6 @@ export default function NoteDetailPage({ params }: { params: { slug: string } })
               <FolderOpen size={18} />
               <span>{note.category}</span>
             </div>
-            {/* <div className="flex items-center gap-2">
-              <Calendar size={18} />
-              <span>{note.date}</span>
-            </div> */}
             <div className="flex items-center gap-2">
               <Calendar size={18} />
               <span>{note.date}</span>
@@ -81,7 +81,7 @@ export default function NoteDetailPage({ params }: { params: { slug: string } })
           )}
         </header>
 
-        <MarkdownRenderer content={note.content} />
+        <ArticleBody content={note.content} body={note.body} />
       </article>
     </div>
   );

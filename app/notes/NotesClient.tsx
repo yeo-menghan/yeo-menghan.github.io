@@ -28,9 +28,9 @@ export default function NotesClient({ notes, categories }: { notes: Note[], cate
   return (
     <div className="max-w-4xl mx-auto">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold mb-4">Notes</h1>
+        <h1 className="text-4xl font-bold mb-4">Writing & notes</h1>
         <p className="text-xl text-slate-600 mb-6">
-          Research paper summaries, technical concepts, and learning notes
+          Research paper summaries, technical concepts, and learning notes.
         </p>
 
         <div className="flex flex-wrap gap-2">
@@ -60,6 +60,7 @@ export default function NotesClient({ notes, categories }: { notes: Note[], cate
         </div>
       </div>
 
+      <p className="mb-8 text-slate-600">For personal essays and opinions, visit my <Link href="/opinions" className="text-blue-600 underline">personal writing</Link>.</p>
       <div className="space-y-4">
         {filteredNotes.map(note => (
           <Link key={note.slug} href={`/notes/${note.slug}`} className='block'>

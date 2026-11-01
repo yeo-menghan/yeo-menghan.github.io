@@ -1,48 +1,12 @@
-import CTABar from '@/components/CTABar';
-import Portrait from '@/components/Portrait';
-import TimelineTabs, { ExperienceEntry, EducationEntry } from '@/components/TimelineTabs';
-import { experiences, educations } from '@/data/timelineData';
-import TechnicalExpertise from '@/components/TechnicalExpertise';
-
-export default function AboutPage() {
-  return (
-    <div className="max-w-4xl mx-auto space-y-12">
-      <section className="grid grid-cols-1 md:grid-cols-[1fr_auto] items-start gap-8 md:gap-10">
-        {/* Text Content */}
-        <div className="order-last md:order-first">
-          <h1 className="text-4xl font-bold mb-2">
-            Hi, I&apos;m Meng Han{' '}
-            <span className="inline-block animate-wave">👋</span>
-          </h1>
-          <p className="text-xl text-slate-600 mb-4">
-            Computer Vision Engineer based in Singapore 🇸🇬.
-          </p>
-
-          {/* Open to Work Box */}
-          <section className="bg-blue-50 rounded-lg p-6 border border-blue-200 mb-6">
-            <h2 className="text-xl font-semibold mb-2">Open to Collaboration!</h2>
-            <p className="text-slate-700">
-              I&apos;m actively learning edge AI and electronics, and am open to projects, collaborations, or just chatting about AI and technology. Feel free to reach out!
-            </p>
-          </section>
-
-          <CTABar />
-        </div>
-
-        {/* Portrait */}
-        <div className="order-first md:order-last">
-          <Portrait />
-        </div>
-      </section>
-
-      <section>
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold mb-6 py-1">My Journey</h1>
-          <TimelineTabs experiences={experiences} educations={educations} />
-        </div>
-      </section>
-
-      <TechnicalExpertise />
-    </div>
-  );
+import Workshop from '@/components/workshop/Workshop';
+import ProjectCarousel from '@/components/ProjectCarousel';
+import { getContentByType } from '@/lib/content';
+import { orderProjects } from '@/data/selected-projects';
+export default async function HomePage() {
+  const projects = orderProjects(await getContentByType('projects')).slice(0, 3);
+  return <>
+    <section className="rooftop-intro"><div><p className="eyebrow"><span className="status-dot" /> COMPUTER VISION ENGINEER · SINGAPORE</p><h1>Yeo Meng Han<span>.</span></h1><p>I build intelligent systems that connect software to the physical world.</p></div><a className="rooftop-index" href="#projects">Step inside the workshop <span>↓</span></a></section>
+    <Workshop />
+    <section id="projects" className="project-section" aria-labelledby="projects-heading" tabIndex={-1}><div className="section-heading"><div><p className="eyebrow">FROM THE WORKBENCH</p><h2 id="projects-heading">Selected experiments.</h2></div><a className="text-link" href="/projects">All projects ↗</a></div><ProjectCarousel projects={projects} /></section>
+  </>;
 }

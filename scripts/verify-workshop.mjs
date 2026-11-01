@@ -1,0 +1,24 @@
+import { readFileSync } from 'node:fs';
+import assert from 'node:assert/strict';
+import { AnimationMixer, LoopOnce, Vector3 } from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+const bytes = readFileSync(new URL('../public/models/workshop.glb', import.meta.url));
+const gltf = await new GLTFLoader().parseAsync(bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength), '');
+for (const id of ['drone', 'camera', 'edge', 'bench', 'monitor', 'notebook', 'debug_switch']) assert.ok(gltf.scene.getObjectByName(id), `Missing ${id}`);
+const drone = gltf.scene.getObjectByName('drone');
+const bench = gltf.scene.getObjectByName('bench');
+const origin = drone.position.clone();
+const benchOrigin = bench.getWorldPosition(new Vector3()).clone();
+const mixer = new AnimationMixer(gltf.scene);
+assert.ok(gltf.animations.some(clip => clip.name === 'Drone_Inspect'));
+assert.equal(gltf.animations.length, 5);
+for (const clip of gltf.animations) mixer.clipAction(clip).setLoop(LoopOnce, 1).play();
+mixer.update(2);
+assert.ok(drone.position.y > origin.y + .5, 'Drone should lift in glTF Y-up coordinates');
+assert.ok(bench.getWorldPosition(new Vector3()).distanceTo(benchOrigin) < .001, 'Workshop must remain stationary');
+mixer.stopAllAction();
+assert.ok(drone.position.distanceTo(origin) < .001, 'Stopping should restore the pad position');
+let meshes = 0;
+gltf.scene.traverse(object => { if (object.isMesh) { meshes++; assert.ok(object.geometry.attributes.position.count > 0); } });
+console.log(`GLB verified: ${bytes.length} bytes, ${meshes} meshes, ${gltf.animations.length} clips; independent flight and reset pass.`);

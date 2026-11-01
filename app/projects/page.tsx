@@ -1,9 +1,9 @@
+export const metadata = { title: 'Projects', alternates: { canonical: '/projects' } };
 import ProjectsClient from './ProjectsClient';
-import { getContentByType, getAllTags, Project } from '@/lib/content';
+import { getContentByType, Project } from '@/lib/content';
 
-export default function ProjectsPage() {
-  const projects = getContentByType('projects') as Project[];
-  const allTags = getAllTags('projects');
+export default async function ProjectsPage() {
+  const projects = await getContentByType('projects') as Project[];
 
-  return <ProjectsClient projects={projects} allTags={allTags} />;
+  return <ProjectsClient projects={projects} />;
 }
