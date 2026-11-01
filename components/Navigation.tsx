@@ -17,7 +17,6 @@ export default function Navigation() {
           {[
             { href: "/about", label: "About" },
             { href: "/projects", label: "Projects" },
-            { href: "/notes", label: "Writing" },
           ].map((link) => (
             <Link
               key={link.href}

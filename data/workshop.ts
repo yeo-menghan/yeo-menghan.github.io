@@ -36,9 +36,9 @@ export const workshopObjects = [
     id: "monitor",
     name: "Monitor",
     category: "Software projects",
-    href: "/projects/grain-project",
+    href: "#projects",
     detail:
-      "An LLM allocation experiment with deterministic evaluation and an iterative feedback loop.",
+      "Browse selected projects and experiments from the workbench.",
   },
   {
     id: "notebook",

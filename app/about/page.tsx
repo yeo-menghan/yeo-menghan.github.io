@@ -20,17 +20,7 @@ export default function AboutPage() {
             Computer Vision Engineer based in Singapore 🇸🇬.
           </p>
 
-          {/* Collaboration invitation */}
-          <section className="bg-blue-50 rounded-lg p-6 border border-blue-200 mb-6">
-            <h2 className="text-xl font-semibold mb-2">
-              Open to Collaboration!
-            </h2>
-            <p className="text-slate-700">
-              I&apos;m actively learning edge AI and electronics, and am open to
-              projects, collaborations, or just chatting about AI and
-              technology. Feel free to reach out!
-            </p>
-          </section>
+          <p className="text-slate-700 mb-6">I work on computer vision and deployed software. Outside work, I’m exploring edge AI and learning electronics, one experiment at a time.</p>
 
           <CTABar />
         </div>

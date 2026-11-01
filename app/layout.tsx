@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "./rooftop.css";
 import Navigation from "@/components/Navigation";
 import StructuredData from "@/components/StructuredData";
 import { Analytics } from "@vercel/analytics/next"; 
